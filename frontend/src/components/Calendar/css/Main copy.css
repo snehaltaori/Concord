@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@300&family=Noto+Sans+Mono:wght@200;300;400&family=Noto+Sans:wght@200;300;400;500;600;700&family=Raleway:wght@400;500;600&family=Rethink+Sans:ital,wght@0,400;0,500;0,600;1,600&display=swap");
+/* ------------------------------------------------------ */
+:root {
+  --white: #fff;
+  --black: #fcfcfc;
+  /* --text-black: #919191; */
+  --text-black: #707070;
+  --blue: #6495ed;
+}
+
+* {
+  /* to override the default css styles of all browsers */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* border: solid 1px red; */
+}
+
+html {
+  /* 10px/16px = .625   */
+  font-size:76.5%;
+}
+
+body {
+  font-family: "noto-sans", "inter", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: var(--text-black);
+  background-color: var(--black);
+
+  height: 100vh;
+  /* width: 100vw; */
+}
+/* ------------------------------------------------------ */
+.range {
+  display: flex;
+  align-items: stretch; /* Make child elements stretch to fill the container */
+  margin: 1rem;
+}
+
+.range .time {
+  background-color: #e1e1e1;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 10%;
+  margin-right: 2rem;
+  /* padding: 10px 10px; */
+  white-space: nowrap;
+  /* overflow: hidden; */
+}
+
+.range .box {
+  margin-right: 2rem;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  /* background: red; */
+  /* background: #f2f2f2; */
+  position: absolute;
+  width: 40%;
+  /* left: 60%; */
+  /* bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  right: 0;
+  top: 0;
+  width: auto; */
+}
+
+/* ------------------ fade in animation ----------------- */
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.drop-in {
+  animation: drop-in 0.6s ease 100ms backwards;
+}
+
+.drop-in-2 {
+  animation: drop-in 1200ms ease 500ms backwards;
+}
+
+@keyframes drop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+
+.barBelowNavbar {
+  /* background-color: #6495ed; */
+  display: flex;
+  justify-content: end;
+}
+
+/* ------------------------------------------------------ */
+
+@media (max-width: 670px) {
+  .range {
+    display: flex;
+    align-items: stretch; /* Make child elements stretch to fill the container */
+    /* margin: 1rem; */
+    margin: 0 1rem;
+    flex-direction: column;
+  }
+
+  .range .time {
+    background-color: #e1e1e1;
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .range .box {
+    margin-right: 2rem;
+    /* margin-top: 1rem; */
+    margin-bottom: 1rem;
+    /* width: 100px; */
+  }
+}

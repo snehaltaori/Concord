@@ -1,0 +1,58 @@
+[
+    {
+      "id": 1,
+      "title": "Chemistry",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, placeat?",
+      "timeStart": "10:00",
+      "timeEnd": "12:45",
+      "dateDue": "02/02/2024"
+    },
+    {
+      "id": 2,
+      "title": "Sports",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, placeat?",
+      "timeStart": "10:00",
+      "timeEnd": "05:30",
+      "dateDue": "02/02/2024"
+    },
+    {
+      "id": 7,
+      "title": "DSA",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, placeat?",
+      "timeStart": "12:22",
+      "timeEnd": "08:45",
+      "dateDue": "02/02/2024"
+    },
+    {
+      "id": 3,
+      "title": "DSA",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, placeat?",
+      "timeStart": "13:22",
+      "timeEnd": "08:45",
+      "dateDue": "02/02/2024"
+    },
+    {
+      "id": 4,
+      "title": "DSA",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, placeat?",
+      "timeStart": "13:00",
+      "timeEnd": "08:45",
+      "dateDue": "02/02/2024"
+    },
+    {
+      "id": 5,
+      "title": "DBMS",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, placeat?",
+      "timeStart": "14:30",
+      "timeEnd": "22:45",
+      "dateDue": "02/02/2024"
+    },
+    {
+      "id": 6,
+      "title": "DBMS",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, placeat?",
+      "timeStart": "22:30",
+      "timeEnd": "23:45",
+      "dateDue": "02/02/2024"
+    }
+  ]

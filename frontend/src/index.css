@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------- Hitarth's Event Calendar -------------- */
+@media (max-width: 670px) {
+  .cal_range {
+    @apply flex items-stretch flex-col mx-4 my-0;
+    /* Make child elements stretch to fill the container */
+    /* margin: 1rem; */
+  }
+  .cal_range .cal_range-time {
+    @apply bg-[#e1e1e1] flex items-center mr-8 mb-4 p-4 rounded-[5px];
+  }
+  .cal_range .cal_box {
+    @apply mr-8 mb-4 w-auto min-w-fit;
+    /* margin-top: 1rem; */
+    /* width: 100px; */
+  }
+}
+
+@media (max-width: 670px) {
+  form.cal_navbarSearch {
+    @apply m-8;
+  }
+  .cal_time-and-date {
+    @apply whitespace-nowrap;
+  }
+  .cal_header {
+    @apply text-[smaller] mb-8 px-4 py-0 rounded-[10px];
+  }
+  .cal_header .cal_profile {
+    @apply whitespace-nowrap;
+  }
+  .cal_profile img {
+    @apply h-[40px] w-[40px] mb-2 rounded-[50%];
+  }
+}
+/* ------------------------------------------------------ */
