@@ -2,6 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@300&family=Noto+Sans+Mono:wght@200;300;400&family=Noto+Sans:wght@200;300;400;500;600;700&family=Raleway:wght@400;500;600&family=Rethink+Sans:ital,wght@0,400;0,500;0,600;1,600&display=swap");
+/* ------------------------------------------------------ */
+:root {
+  --white: #fff;
+  --black: #fcfcfc;
+  /* --text-black: #919191; */
+  --text-black: #707070;
+  --blue: #6495ed;
+}
+
+* {
+  /* to override the default css styles of all browsers */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* border: solid 1px red; */
+}
+
+html {
+  /* 10px/16px = .625   */
+  /* font-size:75%; */
+  /* font-size:62.5%; */
+}
+
+
+body {
+  font-family: "noto-sans", "inter", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  /* font-size: 1.3rem; */
+  /* color: var(--text-black); */
+  background-color: var(--black);
+
+  height: 100vh;
+  /* width: 100vw; */
+}
+
 /* -------------- Hitarth's Event Calendar -------------- */
 @media (max-width: 670px) {
   .cal_range {
@@ -35,5 +72,8 @@
   .cal_profile img {
     @apply h-[40px] w-[40px] mb-2 rounded-[50%];
   }
+
+  
 }
+
 /* ------------------------------------------------------ */

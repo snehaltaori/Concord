@@ -10,9 +10,9 @@ export default function Dropdown({ semesters, currentSemester, setCurrentSemeste
   console.log(semesters);
 
   return (
-    <Menu as="div" className="relative inline-block text-left ">
+    <Menu as="div" className="relative inline-block  text-left ">
       <div>
-        <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-1 font-semibold text-[#6b7280] shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 border-0 text-lg min-w-24">
+        <Menu.Button className="inline-flex text-sm w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-1.5 font-semibold text-[#6b7280] shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 border-0 min-w-20">
           {currentSemester ? currentSemester : "Options"}
           <ChevronDownIcon
             className="-mr-1 h-5 w-5 text-gray-400"
@@ -38,7 +38,7 @@ export default function Dropdown({ semesters, currentSemester, setCurrentSemeste
                   <div
                   onClick={() => setCurrentSemester(semester)}
                     className={classNames(
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                      active ? "bg-gray-100 text-gray-700 text-sm" : "text-gray-700 text-sm",
                       "block px-4 py-2 text-[1rem] no-underline"
                     )}
                   >

@@ -25,7 +25,7 @@ console.log("Rendering CalendarHandler");
   /* ------------------------------------------------------ */
 
   return (
-    <div className="calendar">
+    <div className="calendar ">
       <div className="grid">
         {y2.map((el) => (
           <Range data={el} key={Math.random()} deleteData={deleteData}/>

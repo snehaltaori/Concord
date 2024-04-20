@@ -7,6 +7,62 @@ import { useState } from "react";
 import "./css/Modal.css";
 import ButtonIcon from "./utils/buttons/ButtonIcon";
 
+// const style = {
+//   position: "absolute",
+//   top: "50%",
+//   left: "50%",
+//   transform: "translate(-50%, -50%)",
+//   width: 400,
+//   //   bgcolor: 'background.paper',
+//   bgcolor: "#fff",
+//   color: "#2d2a2e",
+//   //   border: '2px solid #000',
+//   boxShadow: 24,
+//   font: "monospace",
+//   fontWeight: "500",
+//   letterSpacing: ".8px",
+//   p: 4,
+//   display: "flex",
+//   // justifyContent: "center",
+//   // alignItems: "center",
+//   flexDirection: "column",
+// };
+
+// const stylesheet = {
+//   inputBox: {
+//     display: "flex",
+//     alignItems: "center",
+//     overflow: "hidden",
+//   },
+//   input: {
+//     color: "#2d2a2e",
+//     margin: "10px",
+//     background: "#f2f2f2",
+//     borderRadius: "20px",
+//     border: "1px solid #27274a",
+//     height: "24px",
+//     fontWeight: "500",
+//     paddingLeft: "10px",
+//     width: "19rem",
+//     marginLeft: "10px",
+//     overflow: "hidden",
+//   },
+//   button: {
+//     background: "#2cbe82",
+//     color: "#fff",
+//     borderRadius: "5px",
+//     border: "1px solid #2cbe82",
+//     height: "auto",
+//     fontWeight: "500",
+//     width: "auto",
+//     marginLeft: "10px",
+//     overflow: "hidden",
+//     fontSize: "1.2rem",
+//     fontFamily: "noto sans, inter, sans-serif",
+//     padding: "5px 10px",
+//     margin: "10px",
+//   },
+// };
 const style = {
   position: "absolute",
   top: "50%",
@@ -57,7 +113,7 @@ const stylesheet = {
     width: "auto",
     marginLeft: "10px",
     overflow: "hidden",
-    fontSize: "1.2rem",
+    fontSize: ".5rem",
     fontFamily: "noto sans, inter, sans-serif",
     padding: "5px 10px",
     margin: "10px",

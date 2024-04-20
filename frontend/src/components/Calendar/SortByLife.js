@@ -34,46 +34,42 @@ function SortByLife({ tabHandler }) {
 
         <div className="hidden sm:block">
           <nav className="flex gap-6" aria-label="Tabs">
-            <a
+            <div
               onClick={() => toggleMenu(1)}
-              href="#"
-              className={`min-w-24 text-center no-underline shrink-0 rounded-lg p-2 text-lg font-medium text-gray-500 transition duration-300 ease-out  + ${
+              className={`min-w-16 text-center cursor-pointer no-underline shrink-0 rounded-md p-2 py-1.5 text-sm font-medium text-gray-500 transition duration-300 ease-out  + ${
                 isOpen === 1
                   ? "bg-blue-100 text-blue-600 "
                   : "hover:bg-gray-50 hover:text-gray-700"
               }`}
             >
               All
-            </a>
+            </div>
 
-            <a
+            <div
               onClick={() => toggleMenu(2)}
-              href="#"
-              className={`min-w-24 text-center no-underline shrink-0 rounded-lg p-2 text-lg font-medium text-gray-500 transition duration-300 ease-out + ${
+              className={`min-w-20 text-center cursor-pointer no-underline shrink-0 rounded-md p-2 py-1.5 text-sm font-medium text-gray-500 transition duration-300 ease-out + ${
                 isOpen === 2
                   ? "bg-red-100 text-red-600 "
                   : "hover:bg-gray-50 hover:text-gray-700"
               }`}
             >
               Live
-            </a>
+            </div>
 
-            <a
-              href="#"
+            <div
               onClick={() => toggleMenu(3)}
-              className={`min-w-24 text-center no-underline shrink-0 rounded-lg p-2 text-lg font-medium text-gray-500 transition duration-300 ease-out + ${
+              className={`min-w-20 text-center cursor-pointer no-underline shrink-0 rounded-md p-2 py-1.5 text font-medium text-gray-500 transition duration-300 ease-out + ${
                 isOpen === 3
                   ? "bg-orange-100 text-orange-600 "
                   : "hover:bg-gray-50 hover:text-gray-700"
               }`}
             >
               Upcoming
-            </a>
+            </div>
 
-            <a
+            <div
               onClick={() => toggleMenu(4)}
-              href="#"
-              className={`min-w-24 text-center no-underline shrink-0 rounded-lg p-2 text-lg font-medium text-gray-500 transition duration-300 ease-out + ${
+              className={`min-w-20 text-center cursor-pointer no-underline shrink-0 rounded-md p-2 py-1.5 text- font-medium text-gray-500 transition duration-300 ease-out + ${
                 isOpen === 4
                   ? "bg-sky-100 text-sky-600 "
                   : "hover:bg-gray-50 hover:text-gray-700"
@@ -81,7 +77,7 @@ function SortByLife({ tabHandler }) {
               aria-current="page"
             >
               Completed
-            </a>
+            </div>
           </nav>
         </div>
       </div>

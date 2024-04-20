@@ -3,7 +3,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import GetCurrentTime from "./utils/GetCurrentTime";
 
 export default function Box({ boxData, deleteData }) {
-  const size = 0.75;
+  const size = 0.60; // .75 original
   const boxStyle = {
     // margin: "2rem 5rem",
     // width: `${size * 40}%`,
@@ -15,23 +15,23 @@ export default function Box({ boxData, deleteData }) {
     backgroundColor: `#dae7fd`,
     borderRadius: `${size * 0.8}rem`,
     padding: `${size * 1}rem ${size * 1.5}rem`,
-    borderLeft: `${size * 11}px solid #4c8aff`,
+    borderLeft: `${size * 12}px solid #4c8aff`,
     // boxShadow: `0 0 3px #00000030`,
   };
   const boxColorUpcoming = {
     backgroundColor: `#FFEADC`,
-    borderLeft: `${size * 11}px solid #ee9239`,
+    borderLeft: `${size * 12}px solid #ee9239`,
   };
   const boxColorLive = {
     backgroundColor: `#FFE2E2`,
-    borderLeft: `${size * 11}px solid #f55d5d`,
+    borderLeft: `${size * 12}px solid #f55d5d`,
   };
   const boxColorCompleted = {
     backgroundColor: `#DCEFFF `,
-    borderLeft: `${size * 11}px solid #4c8aff`,
+    borderLeft: `${size * 12}px solid #4c8aff`,
   };
   const titleStyle = {
-    marginBottom: `${size * 0.7}rem`,
+    // marginBottom: `${size * 0.7}rem`,
     fontSize: `${size * 1.5}rem`,
     fontWeight: `700`,
     letterSpacing: `${size * 0.6}px`,
@@ -41,7 +41,7 @@ export default function Box({ boxData, deleteData }) {
   const boxBodyStyle = {
     fontSize: `${size * 1.3}rem`,
     fontWeight: `500`,
-    marginBottom: `${size * 0.7}rem`,
+    // marginBottom: `${size * 0.7}rem`,
   };
 
   const fromAndToStyle = {
@@ -104,7 +104,7 @@ export default function Box({ boxData, deleteData }) {
           style={delete_todo}
           onClick={() => deleteData(boxData.eventId)}
         >
-          <DeleteIcon />
+          <DeleteIcon fontSize="inherit"/>
         </div>
       </div>
     </div>
