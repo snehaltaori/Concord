@@ -3,7 +3,7 @@ import './Header.css';
 export default function Header(){
     return(
         <div>
-        <header>
+        <header className='header'>
           <nav className="nav">
             <div className="nav__logo">
               <a href="index.html">Concord.</a>
