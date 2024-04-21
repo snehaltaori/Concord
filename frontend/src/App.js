@@ -9,6 +9,7 @@ import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
 import Calendar from "./pages/Calendar";
+import Login from "./components/Login/Login";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home /> } />
           <Route path="/calendar" element={<Calendar /> } />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </div>
