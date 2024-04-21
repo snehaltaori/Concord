@@ -47,26 +47,8 @@
   transform: translateX(5px);
 }
 
-img {
-  display: flex;
-  width: 100%;
-}
 
-a {
-  text-decoration: none;
-}
-
-html,
-body {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  color: var(--white);
-}
-
-header {
+header .header{
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
