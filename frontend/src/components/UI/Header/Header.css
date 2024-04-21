@@ -7,7 +7,6 @@
   --text-light: #a3a3a3;
   --white: #ffffff;
   --black: #000000;
-  --max-width: 1200px;
 }
 
 * {
@@ -54,8 +53,8 @@ header .header{
   background-size: cover;
 }
 
-nav {
-  background-color: rgba(0, 0, 0, 0.4);
+.navheader{
+  background-color: black;
   max-width: 100vw;
   height: 7vh;
   margin: auto;
