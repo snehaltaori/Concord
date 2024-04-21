@@ -7,7 +7,6 @@
   --text-light: #a3a3a3;
   --white: #ffffff;
   --black: #000000;
-  --max-width: 1200px;
 }
 
 * {
@@ -17,7 +16,7 @@
 }
 
 .section__container {
-  max-width: var(--max-width);
+  max-width: 1200px;
   margin: auto;
   padding: 2rem 1rem;
 }
@@ -155,7 +154,7 @@ form .d-flex a {
   margin-top: 3rem;
   font-weight: bold;
   font-size: .85rem;
-  color: var(--secondary-text-color);
+  color: white;
 }
 
 .not-regis a {

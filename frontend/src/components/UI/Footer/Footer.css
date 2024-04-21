@@ -7,7 +7,7 @@
   --text-light: #a3a3a3;
   --white: #ffffff;
   --black: #000000;
-  --max-width: 1200px;
+  
 }
 
 * {
@@ -17,7 +17,7 @@
 }
 
 .section__container {
-  max-width: var(--max-width);
+  max-width: 1200px;
   margin: auto;
   padding: 5rem 1rem;
 }
