@@ -4,7 +4,7 @@ export default function Header(){
     return(
         <div>
         <header className='header'>
-          <nav className="nav">
+          <nav className="navheader">
             <div className="nav__logo">
               <a href="index.html">Concord.</a>
             </div>
