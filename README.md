@@ -6,12 +6,12 @@ Converted Project Base from HTML CSS JS to React JS and Tailwind
 ### Hitarth Singh Rajput :
 Events Calendar (Frontend + Backend), Elementary Backend with JWT Auth, Bcrypt and Roles 
 
-#### Aryan Kadian : 
+### Aryan Kadian : 
 
-#### Ansh Agrwal : 
+### Ansh Agrwal : 
 
-#### Vishal Parida : 
+### Vishal Parida : 
 
-#### Saloni Turaiha : 
+### Saloni Turaiha : 
 
-#### Snehal Taori : 
+### Snehal Taori : 
