@@ -1,9 +1,9 @@
 ## Contributions : 
 
-#### Dev Darshan : 
+### Dev Darshan : 
 Converted Project Base from HTML CSS JS to React JS and Tailwind
 
-#### Hitarth Singh Rajput :
+### Hitarth Singh Rajput :
 Events Calendar (Frontend + Backend), Elementary Backend with JWT Auth, Bcrypt and Roles 
 
 #### Aryan Kadian : 
