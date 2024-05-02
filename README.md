@@ -8,7 +8,7 @@ Events Calendar (Frontend + Backend), Elementary Backend with JWT Auth, Bcrypt a
 
 ### Aryan Kadian : 
 
-### Ansh Agrwal : 
+### Ansh Agrawal : 
 
 ### Vishal Parida : 
 
