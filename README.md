@@ -4,7 +4,7 @@
 Converted Project Base from HTML CSS JS to React JS and Tailwind
 
 ### Hitarth Singh Rajput :
-```cpp
+```ruby
 contributions = {
   Events_Calendar: "Frontend + Backend",
   JWT_Auth: "Elementary Backend with JWT Auth, Bcrypt and Roles",
