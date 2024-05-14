@@ -8,7 +8,7 @@ Converted Project Base from HTML CSS JS to React JS and Tailwind
 contributions = {
   Events_Calendar: "Frontend + Backend",
   JWT_Auth: "Elementary Backend with JWT Auth, Bcrypt and Roles",
-  Login_Integration: "Integrated Login Backend with Frontend (AuthProvider, HelperFunctions & Token Handling)"
+  Login_Integration: "Integrated Login Backend with Frontend (AuthProvider & Token Handling)"
 }
 ```
 Events Calendar (Frontend + Backend), Elementary Backend with JWT Auth, Bcrypt and Roles, Integrated Login Backend with Frontend (AuthProvider & Token Handling)
