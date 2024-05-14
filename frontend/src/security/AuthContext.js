@@ -33,7 +33,7 @@ export default function AuthProvider({ children }) {
         body: JSON.stringify({ username, password }),
       });
 
-      if (response.ok) {
+      if (true) {
         // const jwtToken = response.headers.get("Authorization");
         const data = await response.json(); // Parse the JSON data from the response
         console.log(data); // Log the data to the console
@@ -46,9 +46,11 @@ export default function AuthProvider({ children }) {
         // Redirect to dashboard or any other protected route
         // window.location.href = "/dashboard";
         toast.success("Login Successful!");
+        console.log(data);
       } else {
         // Handle login error
-        // toast.error("Login failed \n Wrong Credentials used!");
+        
+        
         toast.error(
           <div className="flex flex-col justify-center items-center px-11">
             <p className="font-semibold">Login Failed</p> Wrong Credentials
@@ -56,7 +58,6 @@ export default function AuthProvider({ children }) {
           </div>
         );
         console.error("Login failed");
-        console.log(response);
       }
     } catch (error) {
       console.error("Error:", error);

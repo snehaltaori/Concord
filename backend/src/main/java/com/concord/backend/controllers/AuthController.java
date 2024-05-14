@@ -45,6 +45,7 @@ public class AuthController {
         String token = this.jwtTokenHelper.generateToken(userDetails);
 
         JwtAuthResponse response = new JwtAuthResponse();
+
         response.setToken(token);
         response.setUser(this.mapper.map((User) userDetails, UserDto.class));
         return new ResponseEntity<JwtAuthResponse>(response, HttpStatus.OK);
@@ -60,7 +61,7 @@ public class AuthController {
             this.authenticationManager.authenticate(authenticationToken);
 
         } catch (BadCredentialsException e) {
-            System.out.println("Invalid Detials !!");
+            System.out.println("Invalid Details !!");
             throw new ApiException("Invalid username or password !!");
         }
 

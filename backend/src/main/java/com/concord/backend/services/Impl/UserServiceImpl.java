@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService {
     public UserDto getUserById(Integer userId) {
 
         User user = this.userRepo.findById(userId)
-                .orElseThrow(() -> new ResourceNotFoundException("User", " Id ", userId));
+                .orElseThrow(() -> new ResourceNotFoundException("User", "Id", userId));
 
         return this.userToDto(user);
     }
