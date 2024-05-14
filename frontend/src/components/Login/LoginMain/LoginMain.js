@@ -15,47 +15,7 @@ export default function LoginMain() {
 
   function onSubmit() {
     authContext.login(formData.username, formData.password);
-    
-  } 
-
-  const onLogin = async ({ username, password }) => {
-    try {
-      const response = await fetch("http://localhost:8080/api/v1/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-      });
-
-      if (response.ok) {
-        // const jwtToken = response.headers.get("Authorization");
-        const data = await response.json(); // Parse the JSON data from the response
-        console.log(data); // Log the data to the console
-        const jwtToken = data.token;
-        console.log(jwtToken);
-        console.log("Login successful");
-
-        // Store JWT token in local storage or session storage
-        localStorage.setItem("jwtToken", jwtToken);
-        // Redirect to dashboard or any other protected route
-        // window.location.href = "/dashboard";
-        toast.success("Login Successful!");
-      } else {
-        // Handle login error
-        // toast.error("Login failed \n Wrong Credentials used!");
-        toast.error(
-          <div className="flex flex-col justify-center items-center px-11">
-            <p className="font-semibold">Login Failed</p> Wrong Credentials
-            used!
-          </div>
-        );
-        console.error("Login failed");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
+  }
 
   return (
     <div>

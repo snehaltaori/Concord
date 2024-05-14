@@ -33,7 +33,7 @@ export default function AuthProvider({ children }) {
         body: JSON.stringify({ username, password }),
       });
 
-      if (true) {
+      if (response.ok) {
         // const jwtToken = response.headers.get("Authorization");
         const data = await response.json(); // Parse the JSON data from the response
         console.log(data); // Log the data to the console
@@ -47,28 +47,44 @@ export default function AuthProvider({ children }) {
         // window.location.href = "/dashboard";
         toast.success("Login Successful!");
         console.log(data);
-      } else {
-        // Handle login error
-        
-        
+      } else if (response.status === 404 || response.status === 400) {
+        const data = await response.json(); // Parse the JSON data from the response
+
         toast.error(
-          <div className="flex flex-col justify-center items-center px-11">
-            <p className="font-semibold">Login Failed</p> Wrong Credentials
-            used!
+          <div className="flex flex-col justify-center items-center px-4">
+            <p className="font-semibold">Login Failed</p>
+            <p className="text-center">
+              {response.status === 404
+                ? data.message.toString().slice(0, -4)
+                : data.message}
+            </p>
+          </div>
+        );
+        console.error("Login failed");
+      } else {
+        toast.error(
+          <div className="flex flex-col justify-center items-center px-4">
+            <p className="font-semibold">Login Failed</p>
+            <p>Unknown Error !</p>
           </div>
         );
         console.error("Login failed");
       }
     } catch (error) {
+      toast.error(
+        <div className="flex flex-col justify-center items-center px-4">
+          <p className="font-semibold">Login Failed</p>
+          <p>Internal Server Error !</p>
+        </div>
+      );
       console.error("Error:", error);
     }
-    
-    
   }
 
   function logout() {
-    setAuthenticated(false);
-  }
+    localStorage.removeItem("jwtToken");
+    window.location.href = "/";
+    setAuthenticated(false);  }
 
   return (
     <AuthContext.Provider
