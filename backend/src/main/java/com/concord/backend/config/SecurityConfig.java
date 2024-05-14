@@ -40,11 +40,12 @@ public class SecurityConfig {
     private JwtAuthenticationFilter jwtAuthenticationFilter;
 
     @Bean
+
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf((csrf) -> csrf.disable())
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/api/v1/auth**").permitAll()
+                        .requestMatchers("/api/v1/auth**").permitAll() // <- Minor Error
                         .requestMatchers("/pvt").authenticated()
                         .requestMatchers("/public", "/api/v1/users/create/", "/**").permitAll()
                 )
