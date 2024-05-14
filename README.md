@@ -11,7 +11,7 @@ contributions = {
   Login_Integration: "Integrated Login Backend with Frontend (AuthProvider, HelperFunctions & Token Handling)"
 }
 ```
-Events Calendar (Frontend + Backend), Elementary Backend with JWT Auth, Bcrypt and Roles, Integrated Login Backend with Frontend (AuthProvider, HelperFunctions & Token Handling)
+Events Calendar (Frontend + Backend), Elementary Backend with JWT Auth, Bcrypt and Roles, Integrated Login Backend with Frontend (AuthProvider & Token Handling)
 
 ### Aryan Kadian : 
 
