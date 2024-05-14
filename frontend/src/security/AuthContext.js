@@ -2,7 +2,7 @@
 // put some state in the context
 // share the created context with other components
 
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 export const AuthContext = createContext();
@@ -11,7 +11,7 @@ export const useAuth = () => useContext(AuthContext); // creating a custom hook
 
 export default function AuthProvider({ children }) {
   const [number, setNumber] = useState(0);
-  const [isAuthenticated, setAuthenticated] = useState(false);
+  const [isAuthenticated, setAuthenticated] = useState(localStorage.getItem("jwtToken") ? true : false);
 
   function access() {
     setAuthenticated(true);
@@ -46,6 +46,7 @@ export default function AuthProvider({ children }) {
         // Redirect to dashboard or any other protected route
         // window.location.href = "/dashboard";
         toast.success("Login Successful!");
+        setAuthenticated(true);
         console.log(data);
       } else if (response.status === 404 || response.status === 400) {
         const data = await response.json(); // Parse the JSON data from the response
@@ -83,12 +84,15 @@ export default function AuthProvider({ children }) {
 
   function logout() {
     localStorage.removeItem("jwtToken");
-    window.location.href = "/";
-    setAuthenticated(false);  }
+    // window.location.href = "/login";
+    console.log("Logged out successfully");
+    
+    setAuthenticated(false);
+  }
 
   return (
     <AuthContext.Provider
-      value={{ number, isAuthenticated, login, access, printAccess }}
+      value={{ number, isAuthenticated, login, access, printAccess, logout }}
     >
       {children}
     </AuthContext.Provider>

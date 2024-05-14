@@ -46,7 +46,7 @@ public class SecurityConfig {
                 .csrf((csrf) -> csrf.disable())
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/api/v1/auth**").permitAll() // <- Minor Error
-                        .requestMatchers("/pvt").authenticated()
+                        .requestMatchers("/api/v1/pvt").authenticated()
                         .requestMatchers("/public", "/api/v1/users/create/", "/**").permitAll()
                 )
                 .sessionManagement((session) -> session
