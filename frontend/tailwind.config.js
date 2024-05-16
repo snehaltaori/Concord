@@ -50,7 +50,7 @@ module.exports = {
       },
       borderRadius: {
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
+        md: "10px",
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {

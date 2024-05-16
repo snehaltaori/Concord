@@ -12,6 +12,8 @@ import {
   SheetTrigger,
 } from "./ui/sheet";
 
+import { Link } from "react-router-dom";
+
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
@@ -21,10 +23,6 @@ const routeList = [
     {
         href: "#features",
         label: "Features",
-    },
-    {
-        href: "#testimonials",
-        label: "Testimonials",
     },
     {
         href: "#pricing",
@@ -49,7 +47,7 @@ return (
                         className="ml-2 font-bold text-xl flex"
                     >
                         <LogoIcon />
-                        ShadcnUI/React
+                        Concord.
                     </a>
                 </NavigationMenuItem>
 
@@ -87,17 +85,14 @@ return (
                                         {label}
                                     </a>
                                 ))}
-                                <a
-                                    rel="noreferrer noopener"
-                                    href="https://github.com/leoMirandaa/shadcn-landing-page.git"
-                                    target="_blank"
+                                <Link to = "/dashboard"
                                     className={`w-[110px] border ${buttonVariants({
                                         variant: "secondary",
                                     })}`}
                                 >
-                                    <GitHubLogoIcon className="mr-2 w-5 h-5" />
-                                    Github
-                                </a>
+                                    
+                                    Dashboard
+                                </Link>
                             </nav>
                         </SheetContent>
                     </Sheet>
@@ -120,15 +115,11 @@ return (
                 </nav>
 
                 <div className="hidden md:flex gap-2">
-                    <a
-                        rel="noreferrer noopener"
-                        href="https://github.com/leoMirandaa/shadcn-landing-page.git"
-                        target="_blank"
+                    <Link to = "/dashboard"
                         className={`border ${buttonVariants({ variant: "secondary" })}`}
                     >
-                        <GitHubLogoIcon className="mr-2 w-5 h-5" />
-                        Github
-                    </a>
+                        Dashboard
+                    </Link>
 
                 </div>
             </NavigationMenuList>

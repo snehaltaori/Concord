@@ -17,48 +17,48 @@ const PopularPlanType = {
 
 const pricingList = [
     {
-        title: "Free",
+        title: "Demo Version",
         popular: PopularPlanType.NO,
         price: 0,
         description:
             "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
-        buttonText: "Get Started",
-        benefitList: [
-            "1 Team member",
-            "2 GB Storage",
-            "Upto 4 pages",
-            "Community support",
-            "lorem ipsum dolor",
-        ],
-    },
-    {
-        title: "Premium",
-        popular: PopularPlanType.YES,
-        price: 5,
-        description:
-            "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
         buttonText: "Start Free Trial",
         benefitList: [
-            "4 Team member",
+            "100+ Entities",
             "4 GB Storage",
-            "Upto 6 pages",
-            "Priority support",
-            "lorem ipsum dolor",
+            "Upto 6 rooms",
+            "Community support",
+            "Setup Assistance",
         ],
     },
     {
-        title: "Enterprise",
+        title: "Business",
+        popular: PopularPlanType.YES,
+        price: 100,
+        description:
+            "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
+        buttonText: "Get Started",
+        benefitList: [
+            "4000+ Entities",
+            "1024 GB Storage",
+            "Upto 100 rooms",
+            "Priority support",
+            "AI Enabled",
+        ],
+    },
+    {
+        title: "Organisation",
         popular: PopularPlanType.NO,
-        price: 40,
+        price: 400,
         description:
             "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
         buttonText: "Contact US",
         benefitList: [
-            "10 Team member",
-            "8 GB Storage",
-            "Upto 10 pages",
-            "Priority support",
-            "lorem ipsum dolor",
+            "Unlimited Entities",
+            "Unlimited Storage",
+            "Unlimited rooms",
+            "Grow with Concord",
+            "Access to all features",
         ],
     },
 ];
@@ -67,15 +67,15 @@ export const Pricing = () => {
 return (
     <section id="pricing" className="container py-24 sm:py-32">
         <h2 className="text-3xl md:text-4xl font-bold text-center">
-            Get
+            Subscribe to  
             <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
                 {" "}
-                Unlimited{" "}
+                Concord{" "}
             </span>
-            Access
+            now.
         </h2>
         <h3 className="text-xl text-center text-muted-foreground pt-4 pb-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias reiciendis.
+            The more you wait, the more other organisations grow.
         </h3>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {pricingList.map((pricing) => (

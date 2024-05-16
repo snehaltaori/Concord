@@ -4,21 +4,21 @@ import cubeLeg from "../assets/cube-leg.png";
 
 const serviceList = [
     {
-      title: "Code Collaboration",
+      title: "Role Based Access",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+        "Get the best of your team by assigning roles and permissions to each member.",
       icon: <ChartIcon />,
     },
     {
-      title: "Project Management",
+      title: "Monetization",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+        "Monetize your content and get paid for your hard work. We take care of the rest.",
       icon: <WalletIcon />,
     },
     {
       title: "Task Automation",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+        "Automate your tasks and focus on what matters the most. We got your back.",
       icon: <MagnifierIcon />,
     },
   ];
@@ -29,15 +29,14 @@ export const Services = () => {
   <div className="grid lg:grid-cols-[1fr,1fr] gap-8 place-items-center">
     <div>
       <h2 className="text-3xl md:text-4xl font-bold">
+         Services By {" "}
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-          Client-Centric{" "}
+        Concord.
         </span>
-        Services
       </h2>
 
       <p className="text-muted-foreground text-xl mt-4 mb-8 ">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
-        dolor.
+        Absolutely. No. Compromise. on the services we provide. We make sure you get the best of the best.
       </p>
 
       <div className="flex flex-col gap-8">

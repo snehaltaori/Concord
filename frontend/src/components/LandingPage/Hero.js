@@ -2,6 +2,7 @@ import { Button } from "./ui/button.js";
 import { buttonVariants } from "./ui/button.js";
 import { HeroCards } from "./HeroCards";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   return (
@@ -9,49 +10,39 @@ export const Hero = () => {
       <div className="text-center lg:text-start space-y-6">
         <main className="text-5xl md:text-3xl font-bold">
           <h1 className="inline">
-            <span className="inline bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text md:text-6xl">
+            <span className="inline bg-gradient-to-r from-[#a8f985ac]  to-[#c1e8239a] text-transparent bg-clip-text md:text-6xl py-{32} animated-gradient">
 
-              Concord
+              Concord.
             </span>{" "}
             <br />
           </h1>{" "}
-          Real{" "}
-          <h2 className="inline">
-            <span className="inline bg-gradient-to-r from-[#ff8502] via-[#34f11f] to-[#ff5208] text-transparent bg-clip-text">
-              Organisation
-            </span>{" "}
-            management
-          </h2>
+         
         </main>
 
         <p className="text-xl text-muted-foreground md:w-10/12 mx-auto lg:mx-0">
-          Build your React landing page effortlessly with the required sections
-          to your project.
+          Manage your organisation with ease. Concord is a platform that helps you
+          manage your organisation, meetings, events, and much more.
         </p>
 
         <div className="space-y-4 md:space-y-0 md:space-x-4">
-          <Button className="w-full md:w-1/3">Get Started</Button>
+        <Link to="/signup">
+          <Button className="w-full md:w-1/3">
+            
+              Sign Up
+            
+          </Button>
+          </Link>
 
-          <a
-            rel="noreferrer noopener"
-            href="https://github.com/leoMirandaa/shadcn-landing-page.git"
-            target="_blank"
-            className={`w-full md:w-1/3 ${buttonVariants({
-              variant: "outline",
-            })}`}
-          >
-            Github Repository
-            <GitHubLogoIcon className="ml-2 w-5 h-5" />
-          </a>
+          <Link to="/login" className={`w-full md:w-1/3 ${buttonVariants({variant: "outline",})}`}>
+          Login
+        </Link>
         </div>
       </div>
 
-      {/* Hero cards sections */}
       <div className="z-10">
         <HeroCards />
       </div>
 
-      {/* Shadow effect */}
       <div className="shadow"></div>
     </section>
   );

@@ -17,13 +17,6 @@
   /* border: solid 1px red; */
 }
 
-html {
-  /* 10px/16px = .625   */
-  /* font-size:75%; */
-  /* font-size:62.5%; */
-}
-
-
 body {
   font-family: "noto-sans", "inter", sans-serif;
   line-height: 1;

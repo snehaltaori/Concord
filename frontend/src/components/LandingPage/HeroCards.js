@@ -22,38 +22,36 @@ export const HeroCards = () => {
           <Avatar>
             <AvatarImage
               alt=""
-              src="https://github.com/shadcn.png"
+              src="https://i.pinimg.com/564x/d6/dc/88/d6dc888abc2c6662ff67335b6aec438c.jpg"
             />
             <AvatarFallback>SH</AvatarFallback>
           </Avatar>
 
           <div className="flex flex-col">
-            <CardTitle className="text-lg">John Doe React</CardTitle>
-            <CardDescription>@john_doe</CardDescription>
+            <CardTitle className="text-lg">Sukuna</CardTitle>
+            <CardDescription>@sukunaryomen</CardDescription>
           </div>
         </CardHeader>
 
-        <CardContent>This landing page is awesome!</CardContent>
+        <CardContent>Actually Useful.</CardContent>
       </Card>
 
-      {/* Team */}
       <Card className="absolute right-[20px] top-4 w-80 flex flex-col justify-center items-center drop-shadow-xl shadow-white/10">
         <CardHeader className="mt-8 flex justify-center items-center pb-2">
           <img
-            src="https://i.pravatar.cc/150?img=58"
+            src="https://i.pinimg.com/564x/30/dd/95/30dd959eb730156f886090f687ad83ce.jpg"
             alt="user avatar"
             className="absolute grayscale-[0%] -top-12 rounded-full w-24 h-24 aspect-square object-cover"
           />
-          <CardTitle className="text-center">Leo Miranda</CardTitle>
+          <CardTitle className="text-center">Andrew T.</CardTitle>
           <CardDescription className="font-normal text-primary">
-            Frontend Developer
+            Hustlers University
           </CardDescription>
         </CardHeader>
 
         <CardContent className="text-center pb-2">
           <p>
-            I really enjoy transforming ideas into functional software that
-            exceeds expectations
+            This really helped me handle 1000s of students in my university with ease as if it was nothing.
           </p>
         </CardContent>
 
@@ -61,7 +59,7 @@ export const HeroCards = () => {
           <div>
             <a
               rel="noreferrer noopener"
-              href="https://github.com/leoMirandaa"
+              href="https://github.com/aryankad1an"
               target="_blank"
               className={buttonVariants({
                 variant: "ghost",
@@ -73,7 +71,7 @@ export const HeroCards = () => {
             </a>
             <a
               rel="noreferrer noopener"
-              href="https://twitter.com/leo_mirand4"
+              href="https://twitter.com/"
               target="_blank"
               className={buttonVariants({
                 variant: "ghost",
@@ -111,22 +109,20 @@ export const HeroCards = () => {
       {/* Pricing */}
       <Card className="absolute top-[150px] left-[50px] w-72  drop-shadow-xl shadow-white/10">
         <CardHeader>
+        
           <CardTitle className="flex item-center justify-between">
-            Free
+            Demo Version
             <Badge
               variant="secondary"
               className="text-sm text-primary"
             >
-              Most popular
+              $0
             </Badge>
           </CardTitle>
-          <div>
-            <span className="text-3xl font-bold">$0</span>
-            <span className="text-muted-foreground"> /month</span>
-          </div>
+          
 
           <CardDescription>
-            Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.
+            Try out the demo version of our platform for free.
           </CardDescription>
         </CardHeader>
 
@@ -138,7 +134,7 @@ export const HeroCards = () => {
 
         <CardFooter className="flex">
           <div className="space-y-4">
-            {["4 Team member", "4 GB Storage", "Upto 6 pages"].map(
+            {["Upto 100 Entities", "4 GB Storage", "6 rooms"].map(
               (benefit) => (
                 <span
                   key={benefit}
@@ -160,10 +156,9 @@ export const HeroCards = () => {
             <LightBulbIcon />
           </div>
           <div>
-            <CardTitle>Light & dark mode</CardTitle>
+            <CardTitle>Nothing.</CardTitle>
             <CardDescription className="text-md mt-2">
-              Lorem ipsum dolor sit amet consect adipisicing elit. Consectetur
-              natusm.
+              Nothing should stop you from growing your organisation, get started at Concord.
             </CardDescription>
           </div>
         </CardHeader>
