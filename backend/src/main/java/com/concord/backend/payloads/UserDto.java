@@ -2,6 +2,8 @@ package com.concord.backend.payloads;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.ManyToMany;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
@@ -27,6 +29,9 @@ public class UserDto {
 
     private Set<RoleDto> roles = new HashSet<>();
 
+    public void addRole(RoleDto role) {
+        this.roles.add(role);
+    }
 
     @JsonIgnore
     public String getPassword() {

@@ -33,32 +33,33 @@ public class BackendApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
         System.out.println(this.passwordEncoder.encode("xyz"));
 
         try {
+            if (roleRepo.count() == 0) {
+                Role roleAdmin = new Role();
+                roleAdmin.setName("ROLE_ADMIN");
 
-            Role role = new Role();
-            role.setId(AppConstants.ADMIN_USER);
-            role.setName("ROLE_ADMIN");
+                Role roleFaculty = new Role();
+                roleFaculty.setName("ROLE_FACULTY");
 
-            Role role1 = new Role();
-            role1.setId(AppConstants.NORMAL_USER);
-            role1.setName("ROLE_NORMAL");
+                Role roleStudent = new Role();
+                roleStudent.setName("ROLE_STUDENT");
 
-            List<Role> roles = List.of(role, role1);
+                // Save roles to the database
+                List<Role> roles = List.of(roleAdmin, roleFaculty, roleStudent);
+                List<Role> savedRoles = this.roleRepo.saveAll(roles);
 
-            List<Role> result = this.roleRepo.saveAll(roles);
-
-            result.forEach(r -> {
-                System.out.println(r.getName());
-            });
-
+                savedRoles.forEach(r -> {
+                    System.out.println(r.getName());
+                });
+            } else {
+                System.out.println("Roles already exist. Skipping creation.");
+            }
         } catch (Exception e) {
-            // TODO: handle exception
             e.printStackTrace();
         }
-
     }
+
 
 }

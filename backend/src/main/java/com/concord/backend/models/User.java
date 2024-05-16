@@ -31,8 +31,13 @@ public class User implements UserDetails {
     private String password;
 
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role", referencedColumnName = "id"))
+    //    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//    @JoinTable(name = "user_role",
+//            joinColumns = @JoinColumn(name = "user", referencedColumnName = "id"),
+//            inverseJoinColumns = @JoinColumn(name = "role", referencedColumnName = "id"),
+//            uniqueConstraints = @UniqueConstraint(columnNames = {"user", "role"})
+//    )
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles = new HashSet<>();
 
     @Override
