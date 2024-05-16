@@ -82,6 +82,30 @@ export default function AuthProvider({ children }) {
     }
   }
 
+  function getRoles() {
+    const jwtToken = localStorage.getItem("jwtToken");
+    if (!jwtToken) {
+      return [];
+    }
+    const payload = jwtToken.split(".")[1];
+    const decodedPayload = atob(payload);
+    const rolesArray = JSON.parse(decodedPayload).role;
+    
+    let roles = [];
+
+  for(let i = 0; i < rolesArray.length; i++){
+    roles.push(rolesArray[i].authority);
+  }
+    // console.log(JSON.parse(decodedPayload));
+    // console.log(rolesArray[0].authority);
+    // console.log(roles);
+    return roles;
+  }
+
+  function getToken() {
+    return localStorage.getItem("jwtToken");
+  }
+
   function logout() {
     localStorage.removeItem("jwtToken");
     // window.location.href = "/login";
@@ -92,7 +116,7 @@ export default function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ number, isAuthenticated, login, access, printAccess, logout }}
+      value={{ number, isAuthenticated, login, access, printAccess, logout, getRoles, getToken }}
     >
       {children}
     </AuthContext.Provider>

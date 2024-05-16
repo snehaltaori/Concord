@@ -8,7 +8,6 @@ import {
 } from "./ui/card";
 
 
-
 export const Testimonials = () => {
   return (
     <>

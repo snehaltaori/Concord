@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
+/* *{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+} */
+
+
+.tab{
+    /* border: 2px solid black; */
+    border-radius: 7px;
+    padding: 10px;
+    margin-top: 15px;
+    margin-left: 70px;
+    text-align: center;
+    height: 250px;
+    width:355px;
+    background: rgb(243, 242, 242);
+    color:black;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    transition: ease-in-out 0.5s;
+}
+
+.tab tr, td {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd09;
+    padding-left: 30px;
+}
+
+.tab tr:hover{
+    background-color: black;
+    color:white;
+    transition: ease-in-out 0.5s;
+}
+.tab td:hover{
+    color: orange;
+    transition: ease-in-out 0.5s;
+}
+
+.tab a{
+    text-decoration: none;
+    color: black;
+}
+
+.tab a:hover{
+    color: orange;
+    transition: ease-in-out 0.5s;
+}
+
+.ul{
+    list-style: none;
+    display: flex;
+  }
+  
+.ul li{
+margin: 15px auto;
+font-size: 1rem;
+}
+.logo{
+    text-align: center;
+    display: flex;
+    margin: 10px 0 0 10px;
+}
+
+.logo span{
+font-weight: bold;
+padding-left: 15px;
+font-size: 18px;
+}
+.circular-progress{
+    position: relative;
+    height: 210px;
+    width: 210px;
+    margin-left:75px;
+    border-radius: 50%;
+    background: conic-gradient(black 3.6deg, #ededed 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.circular-progress::before{
+    content: "";
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    background-color: #fff;
+}

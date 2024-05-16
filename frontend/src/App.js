@@ -13,6 +13,8 @@ import Login from "./components/Login/Login";
 import AuthProvider, { useAuth } from "./security/AuthContext";
 import { getAuthorized } from "./helper/helper";
 import { useEffect } from "react";
+import Dashboard from "./pages/Dashboard";
+import Profile from "./pages/Profile";
 
 function App() {
   const authContext = useAuth();
@@ -21,11 +23,9 @@ function App() {
     else return <Navigate to="/login" />; // Redirect to login page if the user is not authenticated
   }
 
-  console.log(" world "+ authContext.isAuthenticated);
+  // console.log(" world "+ authContext.isAuthenticated);
+  // console.log(authContext.getRoles());  // TO GET THE ROLES
 
-
-
-  
   
 
   return (
@@ -40,7 +40,15 @@ function App() {
               path="/dashboard"
               element={
                 <AuthenticatedRoute>
-                  <Calendar />
+                  <Dashboard />
+                </AuthenticatedRoute>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <AuthenticatedRoute>
+                  <Profile />
                 </AuthenticatedRoute>
               }
             />

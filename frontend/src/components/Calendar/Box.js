@@ -1,9 +1,10 @@
 import TimeDirector from "./utils/TimeDirector";
 import DeleteIcon from "@mui/icons-material/Delete";
 import GetCurrentTime from "./utils/GetCurrentTime";
+import { useAuth } from "../../security/AuthContext";
 
 export default function Box({ boxData, deleteData }) {
-  const size = 0.60; // .75 original
+  const size = 0.6; // .75 original
   const boxStyle = {
     // margin: "2rem 5rem",
     // width: `${size * 40}%`,
@@ -85,6 +86,9 @@ export default function Box({ boxData, deleteData }) {
   }
 
   // const deleteData2 = deleteData(boxData.id);
+  const authContext = useAuth();
+  const role = authContext.getRoles();
+  const allowedRoles = ["ROLE_ADMIN", "ROLE_FACULTY"];
 
   return (
     <div
@@ -104,7 +108,9 @@ export default function Box({ boxData, deleteData }) {
           style={delete_todo}
           onClick={() => deleteData(boxData.eventId)}
         >
-          <DeleteIcon fontSize="inherit"/>
+          {allowedRoles.some((allowedRole) => role.includes(allowedRole)) ? (
+            <DeleteIcon fontSize="inherit" />
+          ) : null}
         </div>
       </div>
     </div>

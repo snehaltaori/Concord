@@ -113,7 +113,7 @@ const stylesheet = {
     width: "auto",
     marginLeft: "10px",
     overflow: "hidden",
-    fontSize: ".5rem",
+    fontSize: ".7rem",
     fontFamily: "noto sans, inter, sans-serif",
     padding: "5px 10px",
     margin: "10px",

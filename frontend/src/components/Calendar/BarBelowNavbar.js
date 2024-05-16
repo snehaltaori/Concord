@@ -1,3 +1,4 @@
+import { useAuth } from "../../security/AuthContext";
 import AddEventModal from "./AddEventModal";
 import BasicDatePicker from "./DatePicker";
 import Dropdown from "./Dropdown";
@@ -12,6 +13,10 @@ export default function BarBelowNavbar({
   currentSemester,
   setCurrentSemester,
 }) {
+  const authContext = useAuth();
+  const role = authContext.getRoles();
+  authContext.printAccess();
+
   return (
     <div className="barBelowNavbar fade-in">
       {/* <BasicDatePicker></BasicDatePicker> */}
@@ -27,7 +32,9 @@ export default function BarBelowNavbar({
       </div>
 
       <div className="right">
-        <AddEventModal data={data} setData={setData} updateData={updateData} />
+        {role.includes("ROLE_ADMIN") || role.includes("ROLE_FACULTY") ? (
+          <AddEventModal data={data} setData={setData} updateData={updateData} />
+        ) : "" }
       </div>
     </div>
   );
