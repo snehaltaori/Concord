@@ -47,7 +47,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/api/v1/auth**").permitAll() // <- Minor Error
                         .requestMatchers("/api/v1/pvt").authenticated()
-                        .requestMatchers("/public", "/api/v1/users/create/", "/**", "/api/v1/sendMail").permitAll()
+                        .requestMatchers("/public", "/api/v1/users/create/", "/**", "/api/v1/sendMail", "/api/v1/calendar").permitAll()
                 )
                 .sessionManagement((session) -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

@@ -6,21 +6,23 @@ import BarBelowNavbar from "./BarBelowNavbar";
 import EventStatusChecker from "./utils/EventStatusChecker";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+import { useAuth } from "../../security/AuthContext";
 
 export default function CalendarMain() {
-  console.log("Rendering CalendarMain");
+  // console.log("Rendering CalendarMain");
+
 
   /* ------------------------------------------------------ */
   const [calendarObjectData, setCalendarObjectData] = useState([]);
 
   async function fetchData() {
     try {
-      // const response = await axios.get("http://localhost:8085/calendar/"); // MySql DB // DO NOT REMOVE THIS LINE
-      const response = await axios.get("/eventsData.json"); // .json file data for TESTING
-      console.log(response);
+      const response = await axios.get("http://localhost:8080/api/v1/calendar/"); // MySql DB // DO NOT REMOVE THIS LINE
+      // const response = await axios.get("/eventsData.json"); // .json file data for TESTING
+      // console.log(response);
       
-      // setCalendarObjectData(response.data.data); // MySql DB // DO NOT REMOVE THIS LINE
-      setCalendarObjectData(response.data); // .json file data for TESTING
+      setCalendarObjectData(response.data.data); // MySql DB // DO NOT REMOVE THIS LINE
+      // setCalendarObjectData(response.data); // .json file data for TESTING
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -73,7 +75,7 @@ export default function CalendarMain() {
 
   async function addData(newData) {
     try {
-      const res = await axios.post("http://localhost:8085/calendar/", {
+      const res = await axios.post("http://localhost:8080/api/v1/calendar/", {
         ...newData,
       });
       toast.success("Event Added Successfully");
@@ -89,7 +91,7 @@ export default function CalendarMain() {
     console.log("deleting");
 
     try {
-      const res = await axios.delete(`http://localhost:8085/calendar/${id}`);
+      const res = await axios.delete(`http://localhost:8080/api/v1/calendar/${id}`);
       toast.success("Event Deleted Successfully");
       // const newData = data.filter((el) => el.id !== id);
       // setData(newData);

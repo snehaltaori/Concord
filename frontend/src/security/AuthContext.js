@@ -84,6 +84,9 @@ export default function AuthProvider({ children }) {
 
   function getRoles() {
     const jwtToken = localStorage.getItem("jwtToken");
+    if (!jwtToken) {
+      return [];
+    }
     const payload = jwtToken.split(".")[1];
     const decodedPayload = atob(payload);
     const rolesArray = JSON.parse(decodedPayload).role;
