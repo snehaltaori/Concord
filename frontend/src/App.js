@@ -21,11 +21,9 @@ function App() {
     else return <Navigate to="/login" />; // Redirect to login page if the user is not authenticated
   }
 
-  console.log(" world "+ authContext.isAuthenticated);
+  // console.log(" world "+ authContext.isAuthenticated);
+  // console.log(authContext.getRoles());  // TO GET THE ROLES
 
-
-
-  
   
 
   return (
