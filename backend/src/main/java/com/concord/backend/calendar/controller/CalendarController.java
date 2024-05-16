@@ -5,6 +5,7 @@ import com.concord.backend.calendar.service.CalendarService;
 import com.concord.backend.payloads.APIReturnModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -59,8 +60,10 @@ public class CalendarController {
     }
 
     // Post Multiple Events
+
     @PostMapping("/multiple")
 //    @PostMapping("/")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_FACULTY')")
     public ResponseEntity<?> createMultipleEvents(@RequestBody List<EventModel> eventModelList) {
         apiReturnModel = new APIReturnModel();
         eventsVec = new Vector<>();
@@ -104,6 +107,7 @@ public class CalendarController {
     }
 
     @DeleteMapping("/{eventId}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_FACULTY')")
     public ResponseEntity<?> deleteById(@PathVariable("eventId") int eventId) {
         apiReturnModel = new APIReturnModel();
         eventsVec = new Vector<>();
@@ -125,6 +129,7 @@ public class CalendarController {
 
     // Delete all events
     @DeleteMapping("/")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_FACULTY')")
     public ResponseEntity<?> deleteAllEvents() {
         apiReturnModel = new APIReturnModel();
         try {

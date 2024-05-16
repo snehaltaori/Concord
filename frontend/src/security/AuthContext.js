@@ -102,6 +102,10 @@ export default function AuthProvider({ children }) {
     return roles;
   }
 
+  function getToken() {
+    return localStorage.getItem("jwtToken");
+  }
+
   function logout() {
     localStorage.removeItem("jwtToken");
     // window.location.href = "/login";
@@ -112,7 +116,7 @@ export default function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ number, isAuthenticated, login, access, printAccess, logout, getRoles }}
+      value={{ number, isAuthenticated, login, access, printAccess, logout, getRoles, getToken }}
     >
       {children}
     </AuthContext.Provider>

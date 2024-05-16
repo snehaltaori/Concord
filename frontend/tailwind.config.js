@@ -5,6 +5,7 @@ module.exports = {
     fontFamily: {
       sans: ['"inter", ui-sans-serif', "system-ui"], // inter as default font
       serif: ["ui-serif", "Georgia"],
+      'poppins': ['"Poppins"', 'sans-serif'],
       mono: ["ui-monospace", "SFMono-Regular"],
     },
 

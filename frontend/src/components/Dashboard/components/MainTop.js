@@ -2,7 +2,7 @@ import React from 'react';
 
 const MainTop = () => {
   return (
-    <div className="main-top">
+    <div className="main-top font-poppins">
         <h1>
             IIIT Lucknow <span>•</span>
         </h1>

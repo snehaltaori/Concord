@@ -1,6 +1,6 @@
 /*  import google fonts */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
-*{
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700"); */
+/* *{
   margin: 0;
   padding: 0;
   outline: none;
@@ -8,7 +8,7 @@
   text-decoration: none;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-}
+} */
 .dash{
   background: #111111;
   color: white;

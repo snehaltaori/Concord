@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <div className="Navbar">
+    <div className="Navbar font-poppins">
     <nav>
       <ul>
         <li>

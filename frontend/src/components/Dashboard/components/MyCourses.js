@@ -2,7 +2,7 @@ import React from 'react';
 
 const MyCourses = () => {
   return (
-    <section className="main-course">
+    <section className="main-course font-poppins">
         <h1>My courses</h1>
         <div className="course-box">
         <ul>

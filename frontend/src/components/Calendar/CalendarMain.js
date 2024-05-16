@@ -11,27 +11,33 @@ import { useAuth } from "../../security/AuthContext";
 export default function CalendarMain() {
   // console.log("Rendering CalendarMain");
 
-
+  const authContext = useAuth();
   /* ------------------------------------------------------ */
   const [calendarObjectData, setCalendarObjectData] = useState([]);
 
   async function fetchData() {
     try {
-      const response = await axios.get("http://localhost:8080/api/v1/calendar/"); // MySql DB // DO NOT REMOVE THIS LINE
+      const response = await axios.get(
+        "http://localhost:8080/api/v1/calendar/",
+        {
+          headers: {
+            Authorization: `Bearer ${authContext.getToken()}`, // Add the Authorization header
+          },
+        }
+      ); // MySql DB // DO NOT REMOVE THIS LINE
       // const response = await axios.get("/eventsData.json"); // .json file data for TESTING
       // console.log(response);
-      
+
       setCalendarObjectData(response.data.data); // MySql DB // DO NOT REMOVE THIS LINE
       // setCalendarObjectData(response.data); // .json file data for TESTING
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   }
-  
+
   useEffect(() => {
     fetchData();
   }, []);
-
 
   /* ------------------------------------------------------ */
   let entireData = calendarObjectData;
@@ -77,7 +83,13 @@ export default function CalendarMain() {
     try {
       const res = await axios.post("http://localhost:8080/api/v1/calendar/", {
         ...newData,
-      });
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${authContext.getToken()}`, // Add the Authorization header
+        },
+      }
+    );
       toast.success("Event Added Successfully");
       setData([...data, newData]);
     } catch {
@@ -91,7 +103,14 @@ export default function CalendarMain() {
     console.log("deleting");
 
     try {
-      const res = await axios.delete(`http://localhost:8080/api/v1/calendar/${id}`);
+      const res = await axios.delete(
+        `http://localhost:8080/api/v1/calendar/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${authContext.getToken()}`, // Add the Authorization header
+          },
+        }
+      );
       toast.success("Event Deleted Successfully");
       // const newData = data.filter((el) => el.id !== id);
       // setData(newData);
@@ -135,9 +154,7 @@ export default function CalendarMain() {
 
   return (
     <>
-      <div>
-        {/* <Toaster /> */}
-      </div>
+      <div>{/* <Toaster /> */}</div>
 
       <Navbar
         // handleSearch={handleSearch}

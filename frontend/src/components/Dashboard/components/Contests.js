@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contests = () => {
   return (
-    <section className="main-course">
+    <section className="main-course font-poppins">
       <h1>Contests</h1>
       <div className="course-box">
         <ul>

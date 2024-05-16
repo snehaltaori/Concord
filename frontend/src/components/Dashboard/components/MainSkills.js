@@ -2,7 +2,7 @@ import React from 'react';
 
 const MainSkills = () => {
   return (
-    <div className="main-skills">
+    <div className="main-skills font-poppins">
         <div className="card">
             <i className="fas fa-laptop-code" />
             <h3>Web development</h3>

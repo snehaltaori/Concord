@@ -32,7 +32,7 @@ export default function BarBelowNavbar({
       </div>
 
       <div className="right">
-        {role.includes("ROLE_ADMIN") ? (
+        {role.includes("ROLE_ADMIN") || role.includes("ROLE_FACULTY") ? (
           <AddEventModal data={data} setData={setData} updateData={updateData} />
         ) : "" }
       </div>
