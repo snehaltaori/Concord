@@ -197,8 +197,8 @@ const Forum = () => {
           </button>
         </form>
 
-        <div className="flex flex-wrap">
-          <div className="w-full lg:w-1/4 pr-4">
+        <div className="flex text-left">
+          <div className="mr-4">
             <div className="card-vishal bg-gray-800 rounded-md mb-6">
               <div className="card-body py-2 px-2">
                 <h5 className="f-card-title text-xl font-semibold mb-2">
