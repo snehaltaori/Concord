@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GetCurrentTime from "./utils/GetCurrentTime";
 import DatePuller from "./utils/DatePuller";
 import TimeDirector from "./utils/TimeDirector";
 import DateDecorator from "./utils/DateDecorator";
+import { useAuth } from "../../security/AuthContext";
 
 const size = 0.75;
 
@@ -18,25 +19,37 @@ const fontThick = {
   // marginBottom: `${size * 0.6}rem`,
 };
 
-export default function Navbar({setSearchTodo}) {
-console.log("Rendering Navbar");
-  
-let currentTime = GetCurrentTime();
-currentTime = TimeDirector(currentTime);
-console.log(currentTime);
+export default function Navbar({ setSearchTodo }) {
+  console.log("Rendering Navbar");
 
-if(currentTime[0] === "0") currentTime = currentTime.slice(1);
+  let currentTime = GetCurrentTime();
+  currentTime = TimeDirector(currentTime);
+  console.log(currentTime);
 
-let currentDate = DatePuller();
-currentDate = DateDecorator(currentDate);
-console.log(currentDate);
+  if (currentTime[0] === "0") currentTime = currentTime.slice(1);
 
-/* ------------------------------------------------------ */
+  let currentDate = DatePuller();
+  currentDate = DateDecorator(currentDate);
+  console.log(currentDate);
+
+  const authContext = useAuth();
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    async function getUsername() {
+      setName(await authContext.name);
+    }
+    getUsername();
+  }, [authContext.name]);
+
+  /* ------------------------------------------------------ */
 
   return (
     <header className="cal_header flex items-center justify-between shadow-[0_0_20px_#00000020] mb-8 px-16 py-0 rounded-[10px]">
       <div className="cal_time-and-date flex flex-col justify-center items-center whitespace-nowrap">
-        <div className="time text-lg font-medium" style={timeStyle}>{currentTime}</div>
+        <div className="time text-lg font-medium" style={timeStyle}>
+          {currentTime}
+        </div>
         <div className="date">{currentDate}</div>
       </div>
       <form
@@ -58,8 +71,21 @@ console.log(currentDate);
       </form>
       <div className="cal_profile whitespace-nowrap flex flex-col justify-center items-center m-3">
         {/* <img src="./img/r.jpg" width="60" height="60" alt=""></img> */}
-        <img className="mb-1 rounded-[50%]" src="https://i.pinimg.com/736x/e6/cf/82/e6cf825eb88f0699b5a99a7d488f9567.jpg" width="60" height="60" alt=""></img>
-        <p className="text-xs font-medium " style={fontThick}>Hitarth Rajput</p>
+        {authContext.isAuthenticated ? (
+          <img
+            className="mb-1 rounded-[50%]"
+            src="https://i.pinimg.com/736x/4e/38/3e/4e383efd275152cb5c5d03b1659b7e70.jpg"
+            width="60"
+            height="60"
+            alt=""
+          ></img>
+        ) : (
+          ""
+        )}
+
+        <p className="text-xs font-medium " style={fontThick}>
+          {name}
+        </p>
       </div>
     </header>
   );

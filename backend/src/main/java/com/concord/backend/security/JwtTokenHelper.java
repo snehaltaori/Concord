@@ -1,7 +1,9 @@
 package com.concord.backend.security;
 
+import com.concord.backend.services.UserService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +16,6 @@ import io.jsonwebtoken.Claims;
 @Component
 public class JwtTokenHelper {
     public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
-
 
     private String secret = "jwtTokenKey";
 

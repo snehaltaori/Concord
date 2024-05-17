@@ -22,7 +22,7 @@ export default function AuthProvider({ children }) {
     console.log("accessed: " + isAuthenticated);
   }
 
-  // Authentication Logic
+  // Authentiation Logic
   // async function login(username, password) {
   //   try {
   //     const response = await fetch("http://localhost:8080/api/v1/auth/login", {
