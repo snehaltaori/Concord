@@ -98,10 +98,10 @@ export default function Box({ boxData, deleteData }) {
       <div className="title font-bold" style={titleStyle}>
         {boxData.title}
       </div>
-      <div className="box-body" style={boxBodyStyle}>
+      <div className="box-body text-[#707070]" style={boxBodyStyle}>
         {boxData.body}
       </div>
-      <div className="from-and-to" style={fromAndToStyle}>
+      <div className="from-and-to text-[#707070]" style={fromAndToStyle}>
         {TimeDirector(boxData.timeStart)} - {TimeDirector(boxData.timeEnd)}
         <div
           className="delete-event"
@@ -109,7 +109,7 @@ export default function Box({ boxData, deleteData }) {
           onClick={() => deleteData(boxData.eventId)}
         >
           {allowedRoles.some((allowedRole) => role.includes(allowedRole)) ? (
-            <DeleteIcon fontSize="inherit" />
+            <DeleteIcon color="#707070" fontSize="inherit" />
           ) : null}
         </div>
       </div>

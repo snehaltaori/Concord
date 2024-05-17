@@ -1,3 +1,4 @@
+import { Button } from "antd";
 import { useAuth } from "../../security/AuthContext";
 import AddEventModal from "./AddEventModal";
 import BasicDatePicker from "./DatePicker";
@@ -32,6 +33,7 @@ export default function BarBelowNavbar({
       </div>
 
       <div className="right">
+      <Button type="primary" onClick={() => {authContext.logout()}}>{authContext.isAuthenticated ? "Logout": "Login" }</Button>
         {role.includes("ROLE_ADMIN") || role.includes("ROLE_FACULTY") ? (
           <AddEventModal data={data} setData={setData} updateData={updateData} />
         ) : "" }

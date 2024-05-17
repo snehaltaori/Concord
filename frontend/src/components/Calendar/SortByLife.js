@@ -28,7 +28,7 @@ function SortByLife({ tabHandler }) {
             <option>All</option>
             <option>Live</option>
             <option>Upcoming</option>
-            <option select>Completed</option>
+            <option>Completed</option>
           </select>
         </div>
 

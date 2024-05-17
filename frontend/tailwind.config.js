@@ -11,6 +11,12 @@ module.exports = {
       screens: {
         "2xl": "1400px",
       },
+      fontFamily: {
+      sans: ['"inter", ui-sans-serif', "system-ui"], // inter as default font
+      serif: ["ui-serif", "Georgia"],
+      'poppins': ['"Poppins"', 'sans-serif'],
+      mono: ["ui-monospace", "SFMono-Regular"],
+    },
     },
     extend: {
       colors: {
@@ -48,11 +54,11 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "10px",
-        sm: "calc(var(--radius) - 4px)",
-      },
+      // borderRadius: {
+      //   lg: "var(--radius)",
+      //   md: "10px",
+      //   sm: "calc(var(--radius) - 4px)",
+      // },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },

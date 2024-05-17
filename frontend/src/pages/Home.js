@@ -17,7 +17,7 @@ import "../App.css";
 
 function App() {
   return (
-    <>
+    <div className="bg-background text-foreground">
       <Navbar />
       <Hero />
       <About />
@@ -32,7 +32,7 @@ function App() {
       <FAQ />
       <Footer />
       <ScrollToTop />
-    </>
+    </div>
   );
 }
 

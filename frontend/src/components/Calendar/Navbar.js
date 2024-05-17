@@ -41,7 +41,7 @@ console.log(currentDate);
       </div>
       <form
         className="cal_navbarSearch relative w-[20rem] rounded-lg border-solid border-[1px] border-[#2cbe82] bg-green-500 m-8"
-        onsubmit="event.preventDefault();"
+        onSubmit={(e) => e.preventDefault()}
         role="search"
       >
         <input
@@ -49,14 +49,14 @@ console.log(currentDate);
           id="search"
           type="search"
           placeholder="Search..."
-          autofocus
+          autoFocus
           required
           onChange={(e) => setSearchTodo(e.target.value)}
           // onClick={handleSearchNavbar}
         />
         {/* <button type="submit">Search</button> */}
       </form>
-      <div class="cal_profile whitespace-nowrap flex flex-col justify-center items-center m-3">
+      <div className="cal_profile whitespace-nowrap flex flex-col justify-center items-center m-3">
         {/* <img src="./img/r.jpg" width="60" height="60" alt=""></img> */}
         <img className="mb-1 rounded-[50%]" src="https://i.pinimg.com/736x/e6/cf/82/e6cf825eb88f0699b5a99a7d488f9567.jpg" width="60" height="60" alt=""></img>
         <p className="text-xs font-medium " style={fontThick}>Hitarth Rajput</p>
