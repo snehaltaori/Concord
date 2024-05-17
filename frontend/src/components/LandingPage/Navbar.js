@@ -120,6 +120,11 @@ return (
                     >
                         Dashboard
                     </Link>
+                    <Link to = "/login"
+                        className={`border ${buttonVariants({ variant: "primary" })}`}
+                    >
+                        Log Out
+                    </Link>
 
                 </div>
             </NavigationMenuList>
