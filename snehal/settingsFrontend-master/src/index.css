@@ -1,0 +1,110 @@
+body,#root {
+  background-color: #0c0c0e;
+  color: #ffffff;
+  height: 100vh;
+  width: 100%;
+}
+
+/* .container-fluid {
+  padding-top: 20px;
+} */
+
+.profile-container {
+  position: static;
+  top: 30px;
+  padding: 20px;
+  background: linear-gradient(to left, #ffffff, #000);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(74, 73, 73, 0.1);
+}
+
+.section-container {
+  background-color: #343a40;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+
+.profile-pic {
+  border:#000 2px dotted;
+  width: 120px;
+  height: 180px;
+  border-radius: 6%;
+}
+/*settings and privacy*/
+/* body {
+  background-color: #0c0c0e;
+  color: #f4f3f0;
+} */
+
+.section-container {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #343a40;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+input[type="range"] {
+  width: 200px;
+  margin: 0;
+}
+
+.head {
+  color: #c7c89a;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.dropdown-form {
+  margin-top: 20px;
+}
+
+.bg-grey {
+  background-color: #777;
+}
+
+.button1:hover {
+  opacity: 0.6;
+}
+
+/*passsword*/
+#password-container {
+  padding: 20px;
+  cursor: pointer;
+  background-color:  #343a40;
+}
+
+/*offcanvas*/
+.offcanvas-body{
+background-color: #343a40;
+color: #f6f2f2;
+}
+
+.offcanvas-top{
+background-color: #343a40;
+color: #f6f2f2;
+}
+
+.imghandles{
+  width: 50px; 
+  height: 50px; 
+  position: absolute; 
+  top: 20px; 
+  left: 10px;
+  border-radius: 50%;
+  border: #343a40 solid 1px;
+}
+
+.cardtitle{
+  margin-top: 60px;
+}
+
+.ccard{
+  max-width: 18rem; 
+  background-color:  #343a40;
+}
