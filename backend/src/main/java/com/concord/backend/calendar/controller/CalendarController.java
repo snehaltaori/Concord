@@ -129,7 +129,7 @@ public class CalendarController {
 
     // Delete all events
     @DeleteMapping("/")
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_FACULTY')")
+//    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_FACULTY')")
     public ResponseEntity<?> deleteAllEvents() {
         apiReturnModel = new APIReturnModel();
         try {

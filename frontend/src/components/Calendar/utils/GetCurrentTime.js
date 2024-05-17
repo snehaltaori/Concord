@@ -6,6 +6,8 @@ export default function currentTime() {
 
     if(minutes < 10) minutes = "0" + minutes;
 
-    return [hours, minutes].join(":");
+    // console.log([hours, minutes].join(":"));
+    return "10:01";
+    // return [hours, minutes].join(":");
     
   }
