@@ -9,8 +9,10 @@ import '../components/Dashboard/Styles/Dashboard.css';
 const Dashboard = () => {
     return (
     <div className="dash">
-        <div className="container">
+        <div className="container-dash flex ">
+          <div className="Navbar">
           <Navbar />
+          </div>
           <div className="main">
             <MainTop />
             <MainSkills />

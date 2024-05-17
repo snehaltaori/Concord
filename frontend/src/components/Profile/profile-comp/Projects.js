@@ -4,7 +4,7 @@ const Projects = () => {
   return (
     <div>
         <h3 className="ml-[7rem] font-bold text-xl">Ongoing Projects</h3>
-        <div className="ml-[1rem]">
+        <div className="ml-[1rem] mb-[3rem]">
             <table className="tab text-[1.1rem] shadow-lg transition duration-500 ease-in-out">
                 <tr>
                     <td>FitCit</td>
