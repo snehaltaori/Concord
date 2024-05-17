@@ -9,6 +9,8 @@ import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
 import Calendar from "./pages/Calendar";
+import Forum from "./pages/forumpage";
+import Taskpage from "./pages/taskpage";
 import Login from "./components/Login/Login";
 import AuthProvider, { useAuth } from "./security/AuthContext";
 import { getAuthorized } from "./helper/helper";
@@ -37,7 +39,13 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/login" element={<Login />} />
+<<<<<<< Updated upstream
             <Route path="/signup" element={<Signup />} />
+=======
+            <Route path="/forum" element={<Forum />} />
+            <Route path="/tasks" element={<Taskpage />} />
+
+>>>>>>> Stashed changes
             <Route
               path="/dashboard"
               element={
