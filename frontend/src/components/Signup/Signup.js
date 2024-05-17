@@ -23,10 +23,10 @@ export default function Signup() {
 
 
   return (
-    <div>
+    <div className='bg-background text-foreground'>
   <section
       id="about"
-      className="container py-24 sm:py-36"
+      className="container py-24 sm:py-36 h-svh"
     >
       <div className="bg-muted/50 border rounded-lg py-12">
         <div className="flex flex-col md:flex-row justify-evenly">

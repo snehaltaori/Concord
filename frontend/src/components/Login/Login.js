@@ -5,7 +5,7 @@ import LoginMain from './LoginMain/LoginMain';
 
 export default function Login(){
     return (
-      <div>
+      <div className='bg-background text-foreground'>
         <LoginMain />
 
       </div>

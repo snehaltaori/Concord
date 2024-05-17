@@ -21,7 +21,7 @@ export default function LoginMain() {
 
 
   return (
-    <div>
+    <div className="h-svh">
   <section
       id="about"
       className="container py-24 sm:py-36"
