@@ -21,7 +21,7 @@ function Profile() {
                 <div><Info/></div>
                 <div><Projects/></div>
               </div>
-              <div className="flex flex-wrap mt-[3rem] p-[1rem] space-x-8">
+              <div className="flex flex-wrap mb-[3rem] p-[1rem] space-x-8">
                   <Progress startValue={0} endValue={90} footer={"Course Progress"} />
                   <Progress startValue={0} endValue={60} footer={"Project 1 Progress"}/>
                   <Progress startValue={0} endValue={70} footer={"Project 2 Progress"}/>

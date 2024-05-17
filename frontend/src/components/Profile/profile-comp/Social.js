@@ -16,15 +16,16 @@ const Social = () => {
   return (
     <div className ="w-[24rem] h-[75vh] right-0 ml-[7rem] text-center bg-black rounded-[15px] p-5 flex flex-wrap justify-center items-center flex-col text-white space-y-10">
         <div className="relative flex flex-wrap flex-col justify-center space-y-4">
-            <div className="relative -top-[3rem] text-xl font-bold">
+            <div className="relative -top-[4rem] text-xl font-bold">
             <h4>David Smith</h4>
             </div>
-            <div className="relative w-[120px] h-[120px] rounded-full left-[7rem] -top-[20px]">
+            <div className="relative w-[120px] h-[120px] rounded-full left-[7rem] -top-[40px]">
             <img src={img}/>
             </div>
             <div>
             <p>Freshman at Indian Institute of Information Technology
                 <br />
+                <br/>
             <b>Lucknow</b>
             </p>
             </div>
