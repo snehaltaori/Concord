@@ -6,6 +6,7 @@ import { toast } from "react-hot-toast";
 import { MailOutlined } from '@ant-design/icons';
 import { Link } from "react-router-dom";
 import { CodeOutlined } from '@ant-design/icons';
+import emailjs from 'emailjs-com';
 
 
 export default function Signup() {
@@ -56,8 +57,29 @@ export default function Signup() {
           
             if(data.status===500)
                 toast.error("User created failed")
-            else 
+            else {
                 toast.success("User creation successfully")
+
+                // Send welcome email using EmailJS
+                const serviceID = 'service_7g7unjm';
+                const templateID = 'template_kam3zlr';
+                const userID = 'BvG7Yyh7BErZZrchF';
+                const templateParams = {
+                to_name: username,
+                to_email: email,
+                from_name: 'Concord',
+                message: 'Thank you for registering at our app!',
+                };
+
+                emailjs.send(serviceID, templateID, templateParams, userID)
+                .then(() => {
+                    toast.success("Welcome email sent successfully!");
+                })
+                .catch((error) => {
+                    console.error("Error sending email:", error);
+                    toast.error("Failed to send welcome email.");
+                });
+            }  
         })
         .catch((err) => {
             console.log(err);
