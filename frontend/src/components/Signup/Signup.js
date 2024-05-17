@@ -30,12 +30,39 @@ export default function Signup() {
       toast.error("Passwords do not match")
       return
     }
-    console.log(orgCode);
+    if(!orgCode || !username || !email || !password){
+        toast.error("Please fill all the fields")
+        return
+    }
 
-    // step 1: fetch details from orgCode
-    // step 2: add that data with the username/pass to users database
-    // step 3: when we log in, that data is loaded from there
-   
+
+    // post the data to http://localhost:8080/api/v1/users/create?roleNames=ROLE_FACULTY
+
+    fetch(`http://localhost:8080/api/v1/users/create?roleNames=ROLE_ADMIN`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            username: username,
+            email: email,
+            password: password,
+        }),
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+          
+            if(data.status===500)
+                toast.error("User created failed")
+            else 
+                toast.success("User creation successfully")
+        })
+        .catch((err) => {
+            console.log(err);
+            toast.error("User creation failed")
+        });
+
   }
 
 
