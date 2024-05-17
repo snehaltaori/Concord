@@ -94,28 +94,28 @@ export default function AuthProvider({ children }) {
         },
         body: JSON.stringify({ username, password }),
       });
-  
+
       if (response.ok) {
         const data = await response.json(); // Parse the JSON data from the response
         console.log(data); // Log the data to the console
         const jwtToken = data.token;
         console.log(jwtToken);
         console.log("Login successful");
-  
+
         // Store JWT token in local storage or session storage
         localStorage.setItem("jwtToken", jwtToken);
-  
+
         // Notify login success
         toast.success("Login Successful!");
-  
+
         // Set authenticated state
         setAuthenticated(true);
-        
+
         // Return success status
         return { success: true };
       } else if (response.status === 404 || response.status === 400) {
         const data = await response.json(); // Parse the JSON data from the response
-  
+
         toast.error(
           <div className="flex flex-col justify-center items-center px-4">
             <p className="font-semibold">Login Failed</p>
@@ -127,7 +127,7 @@ export default function AuthProvider({ children }) {
           </div>
         );
         console.error("Login failed");
-  
+
         // Return failure status
         return { success: false };
       } else {
@@ -138,7 +138,7 @@ export default function AuthProvider({ children }) {
           </div>
         );
         console.error("Login failed");
-  
+
         // Return failure status
         return { success: false };
       }
@@ -150,12 +150,11 @@ export default function AuthProvider({ children }) {
         </div>
       );
       console.error("Error:", error);
-  
+
       // Return failure status
       return { success: false };
     }
   }
-  
 
   function getRoles() {
     const jwtToken = localStorage.getItem("jwtToken");
@@ -181,10 +180,13 @@ export default function AuthProvider({ children }) {
     return localStorage.getItem("jwtToken");
   }
 
-  const [name, setName] = useState(""); // 
+  const [name, setName] = useState("");
+  
   useEffect(() => {
-    setName(getUsername());
+    getUsername();
   }, []);
+
+  console.log("Navbar: ", name);
 
   async function getUsername() {
     try {
@@ -197,7 +199,7 @@ export default function AuthProvider({ children }) {
       const decodedPayload = atob(payload); // atob() is a built-in function to decode a string from base-64
       const email = JSON.parse(decodedPayload).sub;
 
-      console.log(email);
+      // console.log(email);
 
       const response = await fetch(
         `http://localhost:8080/api/v1/users/email/${email}`,
@@ -205,16 +207,20 @@ export default function AuthProvider({ children }) {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
+            // 'Content-Type': 'text/plain',
             Authorization: `Bearer ${getToken()}`,
           },
         }
       );
+      
 
       if (response.ok) {
-        const data = await response.json(); // Parse the JSON data from the response
-        // console.log(data.name); // Log the data to the console
+        const data = await response.text(); // Parse the JSON data from the response
         console.log("Username fetched successfully");
-        return data.name;
+        setName(data);
+        console.log(data);
+        
+        return data;
       } else {
         console.error("Username fetch failed");
         return "";
@@ -243,7 +249,7 @@ export default function AuthProvider({ children }) {
         logout,
         getRoles,
         getToken,
-        name
+        name,
       }}
     >
       {children}

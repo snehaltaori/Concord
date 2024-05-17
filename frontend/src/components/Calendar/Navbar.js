@@ -33,15 +33,7 @@ export default function Navbar({ setSearchTodo }) {
   console.log(currentDate);
 
   const authContext = useAuth();
-  const [name, setName] = useState("");
-
-  useEffect(() => {
-    async function getUsername() {
-      setName(await authContext.name);
-    }
-    getUsername();
-  }, [authContext.name]);
-
+  
   /* ------------------------------------------------------ */
 
   return (
@@ -84,7 +76,7 @@ export default function Navbar({ setSearchTodo }) {
         )}
 
         <p className="text-xs font-medium " style={fontThick}>
-          {name}
+          {authContext.name}
         </p>
       </div>
     </header>
