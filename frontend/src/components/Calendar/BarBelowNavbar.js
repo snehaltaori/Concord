@@ -18,6 +18,8 @@ export default function BarBelowNavbar({
   const role = authContext.getRoles();
   authContext.printAccess();
 
+  
+
   return (
     <div className="barBelowNavbar fade-in">
       {/* <BasicDatePicker></BasicDatePicker> */}
@@ -33,7 +35,7 @@ export default function BarBelowNavbar({
       </div>
 
       <div className="right">
-      <Button type="primary" onClick={() => {authContext.logout()}}>{authContext.isAuthenticated ? "Logout": "Login" }</Button>
+      {/* <Button type="primary" onClick={() => {authContext.logout()}}>{authContext.isAuthenticated ? "Logout": "Login" }</Button> */}
         {role.includes("ROLE_ADMIN") || role.includes("ROLE_FACULTY") ? (
           <AddEventModal data={data} setData={setData} updateData={updateData} />
         ) : "" }

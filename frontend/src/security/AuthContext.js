@@ -1,4 +1,4 @@
-  // Create a context
+// Create a context
 // put some state in the context
 // share the created context with other components
 
@@ -11,7 +11,9 @@ export const useAuth = () => useContext(AuthContext); // creating a custom hook
 
 export default function AuthProvider({ children }) {
   const [number, setNumber] = useState(0);
-  const [isAuthenticated, setAuthenticated] = useState(localStorage.getItem("jwtToken") ? true : false);
+  const [isAuthenticated, setAuthenticated] = useState(
+    localStorage.getItem("jwtToken") ? true : false
+  );
 
   function access() {
     setAuthenticated(true);
@@ -163,12 +165,12 @@ export default function AuthProvider({ children }) {
     const payload = jwtToken.split(".")[1];
     const decodedPayload = atob(payload);
     const rolesArray = JSON.parse(decodedPayload).role;
-    
+
     let roles = [];
 
-  for(let i = 0; i < rolesArray.length; i++){
-    roles.push(rolesArray[i].authority);
-  }
+    for (let i = 0; i < rolesArray.length; i++) {
+      roles.push(rolesArray[i].authority);
+    }
     // console.log(JSON.parse(decodedPayload));
     // console.log(rolesArray[0].authority);
     // console.log(roles);
@@ -179,17 +181,70 @@ export default function AuthProvider({ children }) {
     return localStorage.getItem("jwtToken");
   }
 
+  const [name, setName] = useState(""); // 
+  useEffect(() => {
+    setName(getUsername());
+  }, []);
+
+  async function getUsername() {
+    try {
+      const jwtToken = localStorage.getItem("jwtToken");
+      if (!jwtToken) {
+        throw new Error("No token found");
+      }
+
+      const payload = jwtToken.split(".")[1];
+      const decodedPayload = atob(payload); // atob() is a built-in function to decode a string from base-64
+      const email = JSON.parse(decodedPayload).sub;
+
+      console.log(email);
+
+      const response = await fetch(
+        `http://localhost:8080/api/v1/users/email/${email}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${getToken()}`,
+          },
+        }
+      );
+
+      if (response.ok) {
+        const data = await response.json(); // Parse the JSON data from the response
+        // console.log(data.name); // Log the data to the console
+        console.log("Username fetched successfully");
+        return data.name;
+      } else {
+        console.error("Username fetch failed");
+        return "";
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+
   function logout() {
     localStorage.removeItem("jwtToken");
     // window.location.href = "/login";
     console.log("Logged out successfully");
-    
+
     setAuthenticated(false);
   }
 
   return (
     <AuthContext.Provider
-      value={{ number, isAuthenticated, login, access, printAccess, logout, getRoles, getToken }}
+      value={{
+        number,
+        isAuthenticated,
+        login,
+        access,
+        printAccess,
+        logout,
+        getRoles,
+        getToken,
+        name
+      }}
     >
       {children}
     </AuthContext.Provider>
