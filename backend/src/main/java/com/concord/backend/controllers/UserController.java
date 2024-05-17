@@ -1,5 +1,6 @@
 package com.concord.backend.controllers;
 
+import com.concord.backend.email.EmailService;
 import com.concord.backend.payloads.RoleDto;
 import com.concord.backend.payloads.UserDto;
 import com.concord.backend.services.RoleService;
@@ -10,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import com.concord.backend.email.EmailDetails;
 
 import java.util.HashSet;
 import java.util.List;
@@ -27,6 +29,9 @@ public class UserController {
     @Autowired
     private RoleService roleService;
 
+    @Autowired
+    private EmailService emailService;
+
     @PostMapping("/create")
     public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto, @RequestParam("roleNames") List<String> roleNames) {
         String hashPwd = passwordEncoder.encode(userDto.getPassword());
@@ -40,6 +45,7 @@ public class UserController {
 
         // Save the userDto object, not the RoleDto objects
         UserDto createUserDto = this.userService.createUser(userDto);
+
         return new ResponseEntity<>(createUserDto, HttpStatus.CREATED);
     }
 
