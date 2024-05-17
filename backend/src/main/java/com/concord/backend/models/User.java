@@ -28,6 +28,9 @@ public class User implements UserDetails {
     @Column(unique = true)
     private String email;
 
+    @Column(name = "full_name" , nullable = false)
+    private String name;
+
     private String password;
 
 
