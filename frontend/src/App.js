@@ -38,6 +38,12 @@ function App() {
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+<<<<<<< Updated upstream
+=======
+            <Route path="/forum" element={<Forum />} />
+            <Route path="/tasks" element={<Taskpage />} />
+
+>>>>>>> Stashed changes
             <Route
               path="/dashboard"
               element={
