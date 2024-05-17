@@ -11,6 +11,8 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -28,6 +30,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 //@EnableWebSecurity
 //@EnableWebMvc
 //@EnableGlobalAuthentication
+@EnableMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
     @Autowired
@@ -47,7 +50,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/api/v1/auth**").permitAll() // <- Minor Error
                         .requestMatchers("/api/v1/pvt").authenticated()
-                        .requestMatchers("/public", "/api/v1/users/create/", "/**", "/api/v1/sendMail").permitAll()
+                        .requestMatchers("/public", "/api/v1/users/create/", "/**", "/api/v1/sendMail", "/api/v1/calendar").permitAll()
                 )
                 .sessionManagement((session) -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
