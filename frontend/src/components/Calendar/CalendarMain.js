@@ -61,6 +61,7 @@ export default function CalendarMain() {
   //   setData(filteredData);
   // }, [currentSemester, calendarObjectData]); // Dependency array ensures useEffect runs when these values change
   // console.log(data);
+
   /* ------------------------------------------------------ */
 
   let [semestersData, setSemestersData] = useState(
@@ -81,15 +82,17 @@ export default function CalendarMain() {
 
   async function addData(newData) {
     try {
-      const res = await axios.post("http://localhost:8080/api/v1/calendar/", {
-        ...newData,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${authContext.getToken()}`, // Add the Authorization header
+      const res = await axios.post(
+        "http://localhost:8080/api/v1/calendar/",
+        {
+          ...newData,
         },
-      }
-    );
+        {
+          headers: {
+            Authorization: `Bearer ${authContext.getToken()}`, // Add the Authorization header
+          },
+        }
+      );
       toast.success("Event Added Successfully");
       setData([...data, newData]);
     } catch {

@@ -92,7 +92,7 @@ export default function Box({ boxData, deleteData }) {
 
   return (
     <div
-      className={`cal_box drop-in overflow-hidden mr-8 w-[35vw] ${box_class}`}
+      className={`cal_box drop-in text-left overflow-hidden mr-8 w-[35vw] ${box_class}`}
       style={{ ...boxStyle, ...timeCheck() }}
     >
       <div className="title font-bold" style={titleStyle}>
