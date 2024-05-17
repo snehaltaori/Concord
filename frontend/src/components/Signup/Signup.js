@@ -12,12 +12,29 @@ export default function Signup() {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
+    email: "",
+    confirmPassword: "",
+    OCode: ""
   });
 
 
 
   function onSubmit() {
-    
+    // fetch the data from the form
+    const orgCode = formData.OCode;
+    const username = formData.username;
+    const email = formData.email;
+    const password = formData.password;
+    const confirmPassword = formData.confirmPassword;
+    if(password !== confirmPassword){
+      toast.error("Passwords do not match")
+      return
+    }
+    console.log(orgCode);
+
+    // step 1: fetch details from orgCode
+    // step 2: add that data with the username/pass to users database
+    // step 3: when we log in, that data is loaded from there
    
   }
 
@@ -107,7 +124,7 @@ export default function Signup() {
                 onChange={(e) => {
                     setFormData({
                     ...formData,
-                    email: e.target.value,
+                    OCode: e.target.value,
                     });
                 }}
                 />
