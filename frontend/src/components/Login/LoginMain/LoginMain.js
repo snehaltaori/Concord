@@ -5,6 +5,7 @@ import { Button, Checkbox, Form, Input } from "antd";
 import { toast } from "react-hot-toast";
 import { AuthContext, useAuth } from "../../../security/AuthContext";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 export default function LoginMain() {
@@ -14,11 +15,40 @@ export default function LoginMain() {
   });
 
   const authContext = useAuth();
+  const navigate = useNavigate();
 
-  function onSubmit() {
-    authContext.login(formData.username, formData.password);
+  // async function onSubmit() {
+  //   try {
+  //     await authContext.login(formData.username, formData.password);
+      
+  //   } catch (error) {
+  //     // Handle error
+  //     console.error(error);
+  //   }
+  //   if (authContext.isAuthenticated) {
+  //     navigate("/dashboard");
+  //     console.log("Login successful");
+  //   } else {
+  //     // Show error message
+  //     console.error("Login failed");
+  //   }
+  // }
+
+  async function onSubmit() {
+    try {
+      const loginResult = await authContext.login(formData.username, formData.password);
+  
+      if (loginResult.success) {
+        navigate("/dashboard");
+        console.log("Login successful, redirecting to dashboard");
+      } else {
+        console.error("Login failed");
+      }
+    } catch (error) {
+      // Handle error
+      console.error("An error occurred during login:", error);
+    }
   }
-
 
   return (
     <div className="h-svh">
