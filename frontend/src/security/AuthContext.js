@@ -23,6 +23,66 @@ export default function AuthProvider({ children }) {
   }
 
   // Authentication Logic
+  // async function login(username, password) {
+  //   try {
+  //     const response = await fetch("http://localhost:8080/api/v1/auth/login", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ username, password }),
+  //     });
+
+  //     if (response.ok) {
+  //       // const jwtToken = response.headers.get("Authorization");
+  //       const data = await response.json(); // Parse the JSON data from the response
+  //       console.log(data); // Log the data to the console
+  //       const jwtToken = data.token;
+  //       console.log(jwtToken);
+  //       console.log("Login successful");
+
+  //       // Store JWT token in local storage or session storage
+  //       localStorage.setItem("jwtToken", jwtToken);
+  //       // Redirect to dashboard or any other protected route
+  //       // window.location.href = "/dashboard";
+  //       toast.success("Login Successful!");
+  //       setAuthenticated(true);
+  //       flag=1;
+  //       console.log(data);
+  //     } else if (response.status === 404 || response.status === 400) {
+  //       const data = await response.json(); // Parse the JSON data from the response
+
+  //       toast.error(
+  //         <div className="flex flex-col justify-center items-center px-4">
+  //           <p className="font-semibold">Login Failed</p>
+  //           <p className="text-center">
+  //             {response.status === 404
+  //               ? data.message.toString().slice(0, -4)
+  //               : data.message}
+  //           </p>
+  //         </div>
+  //       );
+  //       console.error("Login failed");
+  //     } else {
+  //       toast.error(
+  //         <div className="flex flex-col justify-center items-center px-4">
+  //           <p className="font-semibold">Login Failed</p>
+  //           <p>Unknown Error !</p>
+  //         </div>
+  //       );
+  //       console.error("Login failed");
+  //     }
+  //   } catch (error) {
+  //     toast.error(
+  //       <div className="flex flex-col justify-center items-center px-4">
+  //         <p className="font-semibold">Login Failed</p>
+  //         <p>Internal Server Error !</p>
+  //       </div>
+  //     );
+  //     console.error("Error:", error);
+  //   }
+  // }
+
   async function login(username, password) {
     try {
       const response = await fetch("http://localhost:8080/api/v1/auth/login", {
@@ -32,25 +92,28 @@ export default function AuthProvider({ children }) {
         },
         body: JSON.stringify({ username, password }),
       });
-
+  
       if (response.ok) {
-        // const jwtToken = response.headers.get("Authorization");
         const data = await response.json(); // Parse the JSON data from the response
         console.log(data); // Log the data to the console
         const jwtToken = data.token;
         console.log(jwtToken);
         console.log("Login successful");
-
+  
         // Store JWT token in local storage or session storage
         localStorage.setItem("jwtToken", jwtToken);
-        // Redirect to dashboard or any other protected route
-        // window.location.href = "/dashboard";
+  
+        // Notify login success
         toast.success("Login Successful!");
+  
+        // Set authenticated state
         setAuthenticated(true);
-        console.log(data);
+        
+        // Return success status
+        return { success: true };
       } else if (response.status === 404 || response.status === 400) {
         const data = await response.json(); // Parse the JSON data from the response
-
+  
         toast.error(
           <div className="flex flex-col justify-center items-center px-4">
             <p className="font-semibold">Login Failed</p>
@@ -62,25 +125,35 @@ export default function AuthProvider({ children }) {
           </div>
         );
         console.error("Login failed");
+  
+        // Return failure status
+        return { success: false };
       } else {
         toast.error(
           <div className="flex flex-col justify-center items-center px-4">
             <p className="font-semibold">Login Failed</p>
-            <p>Unknown Error !</p>
+            <p>Unknown Error!</p>
           </div>
         );
         console.error("Login failed");
+  
+        // Return failure status
+        return { success: false };
       }
     } catch (error) {
       toast.error(
         <div className="flex flex-col justify-center items-center px-4">
           <p className="font-semibold">Login Failed</p>
-          <p>Internal Server Error !</p>
+          <p>Internal Server Error!</p>
         </div>
       );
       console.error("Error:", error);
+  
+      // Return failure status
+      return { success: false };
     }
   }
+  
 
   function getRoles() {
     const jwtToken = localStorage.getItem("jwtToken");
