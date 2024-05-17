@@ -28,9 +28,6 @@ public class User implements UserDetails {
     @Column(unique = true)
     private String email;
 
-//    @Column(nullable = false)
-    private String name;
-
     private String password;
 
 
@@ -51,15 +48,11 @@ public class User implements UserDetails {
         return authories;
     }
 
-    public String getActualUsername() {
-        return this.username;
-    }
 
     @Override
     public String getUsername() {
         return this.email;
     }
-
 
     @Override
     public boolean isAccountNonExpired() {

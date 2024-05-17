@@ -27,8 +27,6 @@ public class UserDto {
 
     private String password;
 
-    private String name;
-
     private Set<RoleDto> roles = new HashSet<>();
 
     public void addRole(RoleDto role) {
@@ -44,5 +42,4 @@ public class UserDto {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }
