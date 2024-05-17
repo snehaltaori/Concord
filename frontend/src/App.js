@@ -38,6 +38,7 @@ function App() {
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+
             <Route
               path="/dashboard"
               element={
