@@ -4,6 +4,8 @@ import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import { toast } from "react-hot-toast";
 import { AuthContext, useAuth } from "../../../security/AuthContext";
+import { Link } from "react-router-dom";
+
 
 export default function LoginMain() {
   const [formData, setFormData] = useState({
@@ -20,29 +22,26 @@ export default function LoginMain() {
 
   return (
     <div>
-      <section className="about" id="about">
-        <div className="section__container about__container">
-          <div className="about__grid">
-            <div className="about__content">
-              <h2 className="section__header">
-                Your Gateway to Streamlined Management
+  <section
+      id="about"
+      className="container py-24 sm:py-36"
+    >
+      <div className="bg-muted/50 border rounded-lg py-12">
+        <div className="flex flex-col md:flex-row justify-evenly">
+          
+          <div className="bg-green-0 flex flex-col w-[50%]">
+              <h2 className="text-3xl md:text-4xl font-bold">
+                <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
+                  About{" "}
+                </span>
+                Concord.
               </h2>
-              <p className="para">
-                At Concord, we believe in making organizational management as
-                straightforward as possible. Whether you're a seasoned
-                professional or just starting your managerial journey, our
-                platform is designed to empower you. Log in or register now to
-                unlock a world of possibilities for your business.
+              <p className="text-xl text-muted-foreground mt-4">
+                We are a team of professionals who are passionate about bringing all the organisational needs under one umbrella and making it easier for you to manage your business/organisation/institution. Whatever it is, concord is always the answer.
               </p>
-              <br />
-            </div>
-            <div className="about__list">
-              <div className="login-wrap">
-                <div className="login-wrap-box">
-                  <div className="login-title">
-                    <h3>Enter User Details</h3>
-                  </div>
-                  <Form
+              
+          </div>
+          <Form
                     name="normal_login"
                     className="login-form"
                     initialValues={{ remember: true }}
@@ -105,7 +104,7 @@ export default function LoginMain() {
                       </Form.Item>
 
                       <a className="login-form-forgot" href="">
-                        Forgot password
+                        Forgot password? 
                       </a>
                     </Form.Item>
 
@@ -118,18 +117,25 @@ export default function LoginMain() {
                         onClick={() => onSubmit()}
                       >
                         Log in
+                        
                       </Button>
                     </Form.Item>
-                  </Form>
-                  <p className="not-regis">
-                    Not registered? <a href="signup.html">Create account</a>
+                    <p className="not-regis">
+                    Not registered?  {" "}
+                    <Link to="/signup">
+                      Sign Up
+                    </Link>
                   </p>
-                </div>
-              </div>
-            </div>
-          </div>
+                        
+        </Form>
+        
         </div>
-      </section>
+
+        
+      </div>
+    </section>
+      {/* <div className="shadow"></div> */}
+
     </div>
   );
 }

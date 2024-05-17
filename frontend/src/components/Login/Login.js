@@ -7,6 +7,7 @@ export default function Login(){
     return (
       <div>
         <LoginMain />
+
       </div>
     );
 }

@@ -15,6 +15,7 @@ import { getAuthorized } from "./helper/helper";
 import { useEffect } from "react";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
+import Signup from "./components/Signup/Signup";
 
 function App() {
   const authContext = useAuth();
@@ -36,6 +37,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
             <Route
               path="/dashboard"
               element={
