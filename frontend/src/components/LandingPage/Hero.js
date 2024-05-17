@@ -1,6 +1,7 @@
 import { Button } from "./ui/button.js";
 import { buttonVariants } from "./ui/button.js";
 import { HeroCards } from "./HeroCards";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { Link } from "react-router-dom";
 
 export const Hero = () => {
