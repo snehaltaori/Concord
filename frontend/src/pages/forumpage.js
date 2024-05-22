@@ -164,8 +164,8 @@ const Forum = () => {
   }
 
   return (
-    <div className="container-forum mx-auto w-full" style={{ maxWidth: "90%" }}>
-      <section className="main">
+    <div className="container-forum mx-auto w-full flex justify-center" style={{ maxWidth: "90%" }}>
+      <section className="main ">
         <h2 className="center-heading text-3xl font-semibold mb-4">
           Welcome to the College Forum
         </h2>
@@ -193,9 +193,8 @@ const Forum = () => {
             Search
           </button>
         </form>
-
-        <div className="flex flex-wrap">
-          <div className="w-full lg:w-1/4 pr-4">
+        <div className="flex gap-4 flex-row">
+          <div className=" lg:w-1/4 pr-4">
             <div className="cardv bg-gray-800 rounded-md mb-6">
               <div className="card-body py-2 px-2">
                 <h5 className="f-card-title text-xl font-semibold mb-2">

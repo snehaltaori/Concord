@@ -46,7 +46,7 @@ const Thread = ({ thread, toggleReplyForm, toggleReplies, postReply }) => {
   };
 
   return (
-    <div className="thread mb-4 border-b-2 pb-5 ml-4 mr-4">
+    <div className="thread mb-4 border-b-2 pb-5 ml-4 mr-4 ">
       <h6 className="mb-3 text-lg text-white">{thread.title}</h6>
       <div className="mb-2 text-sm text-gray-400">Posted by {thread.author} - {calculateTimeAgo(thread.postedAt)}</div>
       <div className="mb-2">

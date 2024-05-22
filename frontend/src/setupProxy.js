@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.use(
     "/tasks",
     createProxyMiddleware({
-      target: "http://localhost:8085",
+      target: "http://localhost:8080",
       changeOrigin: true,
     })
   );
@@ -12,7 +12,7 @@ module.exports = function (app) {
   app.use(
     "/replies",
     createProxyMiddleware({
-      target: "http://localhost:8085",
+      target: "http://localhost:8080",
       changeOrigin: true,
     })
   );
@@ -20,7 +20,7 @@ module.exports = function (app) {
   app.use(
     "/threads",
     createProxyMiddleware({
-      target: "http://localhost:8085",
+      target: "http://localhost:8080",
       changeOrigin: true,
     })
   );
