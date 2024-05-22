@@ -69,7 +69,7 @@ function Taskpage() {
   };
 
   return (
-    <>
+    <div className="bg-cyan-500 h-svh">
       <div className="container-forum mx-auto w-full" style={{ maxWidth: "90%" }}>
         <section className="main">
           <div className="container task-container">
@@ -142,7 +142,7 @@ function Taskpage() {
           </div>
         </section>
       </div>
-    </>
+    </div>
   );
 }
 
