@@ -16,6 +16,8 @@ import { useEffect } from "react";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import Signup from "./components/Signup/Signup";
+import Forum from "./pages/forumpage";
+import Taskpage from "./pages/taskpage";
 
 function App() {
   const authContext = useAuth();
@@ -38,6 +40,8 @@ function App() {
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/forum" element={<Forum />} />
+            <Route path="/task" element={<Taskpage />} />
 
             <Route
               path="/dashboard"
