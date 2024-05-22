@@ -19,10 +19,10 @@ function TaskCard({ key, title, description, dueDate, onRemove }) {
   };
 
   return (
-    <div className="w-svw">
+    <>
       <div
-        style={{ width: "100%" }}
-        className={`card-vishal rounded-md task-card  ${
+        // style={{ width: "100%" }}
+        className={`card-vishal rounded-md task-card   ${
           important ? "important-task" : ""
         } ${completed ? "completed-task completed-text" : ""}`}
       >
@@ -60,7 +60,7 @@ function TaskCard({ key, title, description, dueDate, onRemove }) {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

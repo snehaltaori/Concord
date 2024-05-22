@@ -69,8 +69,11 @@ function Taskpage() {
   };
 
   return (
-    <div className="bg-cyan-500 h-svh">
-      <div className="container-forum mx-auto w-full" style={{ maxWidth: "90%" }}>
+    <div className="h-svh">
+      <div
+        className="container-forum mx-auto w-full h-full"
+        // style={{ maxWidth: "90%" }}
+      >
         <section className="main">
           <div className="container task-container">
             <h1 className="text-4xl text-white text-center mb-3">Your Tasks</h1>
@@ -80,7 +83,11 @@ function Taskpage() {
             <div className="grid grid-cols-3 lg:grid-cols-3 gap-4">
               <div className="col-span-1 task-section">
                 <h2 className="text-3xl text-white mb-3">Assigned Tasks</h2>
-                <div className={`cardv rounded-md task-card ${completed ? "completed-task completed-text" : ""}`}>
+                <div
+                  className={`cardv rounded-md task-card ${
+                    completed ? "completed-task completed-text" : ""
+                  }`}
+                >
                   <div className="px-2 py-2 rounded-md card-header task-header">
                     <h5 className="text-white text-xl card-title">
                       Task 1 <br />
@@ -88,7 +95,9 @@ function Taskpage() {
                     </h5>
                   </div>
                   <div className="px-2 py-2 card-body">
-                    <p className="card-text text-white">Description of Task 1.</p>
+                    <p className="card-text text-white">
+                      Description of Task 1.
+                    </p>
                     <button
                       type="button"
                       className="bg-green-500 hover:bg-green-600 text-white mt-4 mb-1 py-2 px-4 rounded-md"
@@ -98,7 +107,11 @@ function Taskpage() {
                     </button>
                   </div>
                 </div>
-                <div className={`cardv rounded-md task-card ${completed2 ? "completed-task completed-text" : ""}`}>
+                <div
+                  className={`cardv rounded-md task-card ${
+                    completed2 ? "completed-task completed-text" : ""
+                  }`}
+                >
                   <div className="px-2 py-2 rounded-md card-header task-header">
                     <h5 className="text-white text-xl card-title">
                       Task 2 <br />
@@ -106,7 +119,9 @@ function Taskpage() {
                     </h5>
                   </div>
                   <div className="px-2 py-2 card-body">
-                    <p className="card-text text-white">Description of Task 2.</p>
+                    <p className="card-text text-white">
+                      Description of Task 2.
+                    </p>
                     <button
                       type="button"
                       className="bg-green-500 hover:bg-green-600 text-white mt-4 mb-1 py-2 px-4 rounded-md"

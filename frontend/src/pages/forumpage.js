@@ -3,7 +3,7 @@ import Thread from "../components/Forum/thread";
 import axios from "axios";
 import "../style.css";
 import "../style_forum.css";
-import "../index.css";
+// import "../index.css";
 
 const Forum = () => {
   const [threads, setThreads] = useState([]);
@@ -178,12 +178,12 @@ const Forum = () => {
   }
 
   return (
-    <div className="bg-fuchsia-500 h-svh">
+    <div className="bg-fuchsia-500 h-svh" style={{color: "red"}}>
       <div
-        className="container-forum mx-auto w-full flex justify-center"
-        style={{ maxWidth: "90%" }}
+        className="container-forum mx-auto w-full h-full flex justify-center"
+        // style={{ maxWidth: "90%" }}
       >
-        <section className="main ">
+        <section className="main">
           <h2 className="center-heading text-3xl font-semibold mb-4">
             Welcome to the College Forum
           </h2>
