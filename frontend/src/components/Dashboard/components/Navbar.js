@@ -36,7 +36,7 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/tasks" activeClassName="active">
+          <NavLink to="/task" activeClassName="active">
             <i className="fas fa-tasks" />
             <span className="nav-item">Tasks</span>
           </NavLink>

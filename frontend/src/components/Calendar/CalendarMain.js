@@ -18,7 +18,7 @@ export default function CalendarMain() {
   async function fetchData() {
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/calendar/",
+        "http://16.170.15.192:8080/api/v1/calendar/",
         {
           headers: {
             Authorization: `Bearer ${authContext.getToken()}`, // Add the Authorization header
@@ -83,7 +83,7 @@ export default function CalendarMain() {
   async function addData(newData) {
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/v1/calendar/",
+        "http://16.170.15.192:8080/api/v1/calendar/",
         {
           ...newData,
         },
@@ -107,7 +107,7 @@ export default function CalendarMain() {
 
     try {
       const res = await axios.delete(
-        `http://localhost:8080/api/v1/calendar/${id}`,
+        `http://16.170.15.192:8080/api/v1/calendar/${id}`,
         {
           headers: {
             Authorization: `Bearer ${authContext.getToken()}`, // Add the Authorization header
