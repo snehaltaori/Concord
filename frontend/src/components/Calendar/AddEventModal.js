@@ -240,7 +240,7 @@ export default function TransitionsModal({ data, setData, updateData }) {
                   <input
                     className="inputItem"
                     type="text"
-                    placeholder="text"
+                    placeholder="09:00"
                     style={stylesheet.input}
                     onChange={(e) => setFrom(e.target.value)}
                   />
@@ -250,7 +250,7 @@ export default function TransitionsModal({ data, setData, updateData }) {
                   <input
                     className="inputItem"
                     type="text"
-                    placeholder="text"
+                    placeholder="13:00"
                     style={stylesheet.input}
                     onChange={(e) => setTo(e.target.value)}
                   />

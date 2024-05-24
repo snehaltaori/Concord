@@ -87,7 +87,7 @@ export default function AuthProvider({ children }) {
 
   async function login(username, password) {
     try {
-      const response = await fetch("http://16.170.15.192:8080/api/v1/auth/login", {
+      const response = await fetch("http://localhost:8080/api/v1/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -184,7 +184,7 @@ export default function AuthProvider({ children }) {
   
   useEffect(() => {
     getUsername();
-  }, []);
+  }, [isAuthenticated]);
 
   console.log("Navbar: ", name);
 
@@ -202,7 +202,7 @@ export default function AuthProvider({ children }) {
       // console.log(email);
 
       const response = await fetch(
-        `http://16.170.15.192:8080/api/v1/users/email/${email}`,
+        `http://localhost:8080/api/v1/users/email/${email}`,
         {
           method: "GET",
           headers: {

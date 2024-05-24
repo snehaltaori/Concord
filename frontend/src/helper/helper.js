@@ -1,4 +1,4 @@
-export const BASE_URL = "http://16.170.15.192:8080/api/v1";
+export const BASE_URL = "http://localhost:8080/api/v1";
 
 /* ------------------------------------------------------ */
 export async function getAuthorized (path) {

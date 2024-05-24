@@ -67,6 +67,7 @@ public class BackendApplication implements CommandLineRunner {
                 System.out.println("Roles already exist. Skipping creation.");
             }
 
+//            if(calendarRepo.count() == 0) {
             if(calendarRepo.count() == 0) {
                 try{
 

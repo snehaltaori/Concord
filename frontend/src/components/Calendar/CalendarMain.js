@@ -18,7 +18,7 @@ export default function CalendarMain() {
   async function fetchData() {
     try {
       const response = await axios.get(
-        "http://16.170.15.192:8080/api/v1/calendar/",
+        "http://localhost:8080/api/v1/calendar/",
         {
           headers: {
             Authorization: `Bearer ${authContext.getToken()}`, // Add the Authorization header
@@ -41,7 +41,7 @@ export default function CalendarMain() {
 
   /* ------------------------------------------------------ */
   let entireData = calendarObjectData;
-  const [currentSemester, setCurrentSemester] = useState("Mtech");
+  const [currentSemester, setCurrentSemester] = useState("Sem 2");
   let semesters = new Set(
     entireData.filter((el) => el.semester).map((el) => el.semester)
   );
@@ -83,7 +83,7 @@ export default function CalendarMain() {
   async function addData(newData) {
     try {
       const res = await axios.post(
-        "http://16.170.15.192:8080/api/v1/calendar/",
+        "http://localhost:8080/api/v1/calendar/",
         {
           ...newData,
         },
@@ -107,7 +107,7 @@ export default function CalendarMain() {
 
     try {
       const res = await axios.delete(
-        `http://16.170.15.192:8080/api/v1/calendar/${id}`,
+        `http://localhost:8080/api/v1/calendar/${id}`,
         {
           headers: {
             Authorization: `Bearer ${authContext.getToken()}`, // Add the Authorization header

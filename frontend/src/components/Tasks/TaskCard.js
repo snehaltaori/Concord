@@ -26,13 +26,13 @@ function TaskCard({ key, title, description, dueDate, onRemove }) {
           important ? "important-task" : ""
         } ${completed ? "completed-task completed-text" : ""}`}
       >
-        <div className="px-2 py-2 rounded-md card-header task-header">
+        <div className="px-2 py-2 rounded-md card-header task-header rounded-b-none">
           <h5 className="text-white text-xl card-title">
             {title} <br />
             <small>Due {dueDate}</small>
           </h5>
         </div>
-        <div className="px-2 py-2 card-body">
+        <div className="px-2 py-2 card-body bg-[#484646] rounded-md rounded-t-none">
           <p className="card-text text-white">{description}</p>
           <button
             type="button"

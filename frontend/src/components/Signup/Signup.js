@@ -37,9 +37,9 @@ export default function Signup() {
     }
 
 
-    // post the data to http://16.170.15.192:8080/api/v1/users/create?roleNames=ROLE_FACULTY
+    // post the data to http://localhost:8080/api/v1/users/create?roleNames=ROLE_FACULTY
 
-    fetch(`http://16.170.15.192:8080/api/v1/users/create?roleNames=ROLE_ADMIN`, {
+    fetch(`http://localhost:8080/api/v1/users/create?roleNames=ROLE_ADMIN`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
