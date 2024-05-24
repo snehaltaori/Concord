@@ -19,7 +19,7 @@ Dashboard, Profile Page
 ### Vishal Parida : 
 Forum Page & Task Page (Frontend + Backend)
 
-### Saloni Turaiha : 
+### Saloni Turaiha : clubs page(frontend + backend) 
 
 ### Snehal Taori : 
 Settings page (Frontend + Backend), Handled incoming data from main backend into settings page, Contributed to server backup.
