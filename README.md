@@ -23,6 +23,6 @@ Designed complete frontend + backend including integration and data handling for
 clubs page(frontend + backend) ,handled clubs api of concord,data management from other college's clubs
 
 ### Snehal Taori : 
-Settings page (Frontend + Backend), Handled incoming data from main backend into settings page, Contributed to server backup.
+Settings page (Frontend + Backend), Handled incoming data from main backend into settings page, Contributed to server backup, Created the ppt for website project.
 
 
