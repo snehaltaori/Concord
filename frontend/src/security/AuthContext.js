@@ -181,7 +181,7 @@ export default function AuthProvider({ children }) {
   }
 
   const [name, setName] = useState("");
-  
+
   useEffect(() => {
     getUsername();
   }, [isAuthenticated]);
@@ -212,14 +212,13 @@ export default function AuthProvider({ children }) {
           },
         }
       );
-      
 
       if (response.ok) {
         const data = await response.text(); // Parse the JSON data from the response
         console.log("Username fetched successfully");
         setName(data);
         console.log(data);
-        
+
         return data;
       } else {
         console.error("Username fetch failed");
