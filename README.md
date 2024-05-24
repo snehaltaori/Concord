@@ -23,3 +23,5 @@ Complete Landing Page.
 ### Saloni Turaiha : 
 
 ### Snehal Taori : 
+Settings page (Frontend + Backend)
+
