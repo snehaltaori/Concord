@@ -20,7 +20,7 @@ Dashboard, Profile Page
 Forum Page & Task Page (Frontend + Backend)
 
 ### Saloni Turaiha : 
-clubs page(frontend + backend) 
+clubs page(frontend + backend) ,handled clubs api of concord,data management from other college's clubs
 
 ### Snehal Taori : 
 Settings page (Frontend + Backend), Handled incoming data from main backend into settings page, Contributed to server backup.
