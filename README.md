@@ -18,7 +18,7 @@ contributions = {
 Events Calendar (Frontend + Backend), Elementary Backend with JWT Auth, Bcrypt and Roles, Integrated Login Backend with Frontend (AuthProvider & Token Handling)
 
 ### Aryan Kadian : 
-Complete Landing Page.
+Complete Landing Page, Contributed in dashboard, Finalised Login.js and Signup.js, Data Management/Handling(State Management) from backend, Contributed to Deployment.
 
 ### Ansh Agrawal : 
 Dashboard, Profile Page
