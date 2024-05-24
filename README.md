@@ -17,7 +17,7 @@ Complete Landing Page, Contributed in dashboard, Finalised Login.js and Signup.j
 Dashboard, Profile Page
 
 ### Vishal Parida : 
-Forum Page & Task Page (Frontend + Backend)
+Designed complete frontend + backend including integration and data handling for the "Forum page" and the "Task page", Designed overall project blueprint, Contributed to designing the DFD and AWS deployment.
 
 ### Saloni Turaiha : 
 clubs page(frontend + backend) 
