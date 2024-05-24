@@ -28,5 +28,6 @@ Dashboard, Profile Page
 ### Saloni Turaiha : 
 
 ### Snehal Taori : 
-Settings page (Frontend + Backend)
+Settings page (Frontend + Backend), Handled incoming data from main backend into settings page, Contributed to server backup.
+
 
