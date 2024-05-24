@@ -23,7 +23,7 @@ Complete Landing Page.
 ### Ansh Agrawal : 
 Dashboard, Profile Page
 
-### Vishal Parida : 
+### Vishal Parida : Forum Page & Task Page (Frontend + Backend)
 
 ### Saloni Turaiha : 
 
